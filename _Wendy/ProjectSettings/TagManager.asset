@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Block
+  - Wall
+  - Exit
+  - Floor
+  - Item
+  - ItemSet
+  - Location
+  - Destination
+  - Enter
+  - EnterButton_CP
+  - InputButton_CP
+  - Frame
+  - Book_EB
+  - Key_EB
+  - Puzzle
+  - Door
+  - SubClock
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - CameraObstacle
+  - Light
+  - Item
+  - Item_HJ
+  - Doll
+  - Display
+  - Floor
+  - Obstacle
+  - Player
+  - BlockPuzzle
+  - ClockPuzzle
+  - FramePuzzle
+  - Gear
+  - Ending
+  - GlowEffect
+  - Render
+  - Basement
+  - Flash
+  - Snow
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 4125713311
+    locked: 0
