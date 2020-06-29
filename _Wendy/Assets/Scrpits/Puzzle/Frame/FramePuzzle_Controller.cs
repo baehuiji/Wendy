@@ -5,6 +5,23 @@ using UnityEngine;
 public class FramePuzzle_Controller : MonoBehaviour
 {
 
+    [SerializeField]
+    private string oneImageSound = "FP_oneImage";
+
+    [SerializeField]
+    private string twoImage1Sound = "FP_twoImage1";
+
+    [SerializeField]
+    private string twoImage2Sound = "FP_twoImage1";
+
+    [SerializeField]
+    private string threeImageSound = "FP_threeImage";
+
+    [SerializeField]
+    private string fourImageSound = "FP_fourImage";
+
+
+
     private Vector3 MousePoint;
     Ray Mouse_ray;
 
@@ -44,8 +61,12 @@ public class FramePuzzle_Controller : MonoBehaviour
     FramePuzzle_Enter puzzleEnter_script;
 
     public GameObject noEntry_obj;
-    public GameObject Flash_obj;
-    public GameObject _reward;
+    
+    Drawer_FP _drawer_script;
+    //public GameObject Flash_obj;
+    //public GameObject _reward;
+
+    public GameObject _frame_coll;
 
 
     void Start()
@@ -61,6 +82,8 @@ public class FramePuzzle_Controller : MonoBehaviour
 
         //subtitle_script = GameObject.FindObjectOfType<Subtitle_Controller>();
         puzzleEnter_script = GameObject.FindObjectOfType<FramePuzzle_Enter>();
+
+        _drawer_script = GameObject.FindObjectOfType<Drawer_FP>();
     }
 
 
@@ -174,7 +197,31 @@ public class FramePuzzle_Controller : MonoBehaviour
                         if (curGear_mN == preGear_mN)
                         {
                             // - 맞다
-                            sequence++;
+                            sequence++; //이러면 추가다.
+                            
+                            
+                            if(sequence == 2)
+                            {
+                                SoundManger.instance.PlaySound(oneImageSound);
+                            }
+
+                            if (sequence == 3)
+                            {
+                                SoundManger.instance.PlaySound(twoImage2Sound);
+                                SoundManger.instance.PlaySound(twoImage1Sound);
+                            }
+
+                            if (sequence == 4)
+                            {
+                                SoundManger.instance.PlaySound(threeImageSound);
+
+                            }
+
+                            if (sequence == 5)
+                            {
+                                SoundManger.instance.PlaySound(fourImageSound);
+
+                            }
 
                             //자막바꾸기 **************
                             //subtitle_script.change_text(sequence);
@@ -183,8 +230,11 @@ public class FramePuzzle_Controller : MonoBehaviour
                             {
                                 puzzleEnter_script.set_puzzleEnd();
                                 noEntry_obj.SetActive(false);
-                                Flash_obj.SetActive(true);
-                                _reward.SetActive(true);
+
+                                // 보상
+                                _drawer_script.RewardActive();
+                                //Flash_obj.SetActive(true);
+                                //_reward.SetActive(true);
                             }
 
                             // - 톱니 해제 , 유예기간 지난후에 톱니가 해제됨.

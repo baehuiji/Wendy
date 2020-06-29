@@ -56,6 +56,8 @@ public class EasyOutlineSystem : MonoBehaviour
 
     public int index;
 
+    public string objName;
+
     void Awake() {
         cam = GetComponent<Camera>();
         if (cameraSceneMap == null) {

@@ -63,12 +63,12 @@ public class Player_HJ : MonoBehaviour
         // - Animation transition
         if (h == 0 && v == 0)
         {
-            _animator.SetBool("IsWalking", false);
+            _animator.SetBool("IsWalking", false);//변경해서 끄는 것이 아닌 이렇게 애니메이션을 비활성화하는걸루다가....
             //Debug.Log("Arrow Button Released");
         }
         else
         {
-            _animator.SetBool("IsWalking", true);
+            _animator.SetBool("IsWalking", true);  
 
             targetForward = playerObj.transform.rotation * Vector3.forward; //localRotation -> rotation
         }
@@ -135,5 +135,10 @@ public class Player_HJ : MonoBehaviour
     public void set_cp_start(bool b)
     {
         cp_start = b;
+    }
+
+    public void SetDeActiveAni()
+    {
+        _animator.SetBool("IsWalking", false);
     }
 }

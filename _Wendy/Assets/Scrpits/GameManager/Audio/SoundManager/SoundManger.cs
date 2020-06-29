@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Sound
+public class Sound_PUZZLE
 {
     public string name;    //곡의 이름
     public AudioClip clip; //곡
@@ -35,8 +35,8 @@ public class SoundManger : MonoBehaviour
     
     public string[] playSoundName;
 
-    public Sound[] effectSound;         //이펙스 사운드 저장
-    public Sound[] bgmSound;            //브금 사운드 저장
+    public Sound_PUZZLE[] effectSound;         //이펙스 사운드 저장
+    public Sound_PUZZLE[] bgmSound;            //브금 사운드 저장
 
 
 
@@ -46,6 +46,18 @@ public class SoundManger : MonoBehaviour
         playSoundName = new string[audioEffects.Length];
     }
 
+    public void BGMSetMusicVolum(float vloume)
+    {
+        audioBgm.volume = vloume;
+    }
+
+    public void EffectSetMusicVolum(float vloume)
+    {
+        for (int j = 0; j < audioEffects.Length; j++) //재생되어있지 않은 오디오를 찾기 
+        {
+            audioEffects[j].volume = vloume;
+        }
+    }
 
     //이름이 입력되면 -> Sound배열안에 맞는 이름이 있는지 찾고 -> 있다면 AudioSource에 넣어서 재생
     public void PlaySound(string _name)
@@ -58,20 +70,48 @@ public class SoundManger : MonoBehaviour
                 {
                     if (!audioEffects[j].isPlaying) //재생중이지 않은것은 안걸림 
                     {
+                        //Debug.Log(_name + "존재합니다 ");
                         playSoundName[i] = effectSound[i].name; //재생중인 효과이름을 사운드 이름에 넣어줍니다
                         audioEffects[i].clip = effectSound[i].clip;
                         audioEffects[i].Play();
                         return;
                     }
+
                 }
                 Debug.Log("모든 가용 AudioSource가 사용중입니다 ");
                 return;
             }
-            Debug.Log(_name+"사운드가 존재하지않습니다. ");
+
+         
+               // Debug.Log(_name+"사운드가 존재하지않습니다. ");
         }
         
     }
 
+    //public void PlayLoopSound(string _name)
+    //{
+    //    for (int i = 0; i < effectSound.Length; i++)
+    //    {
+    //        if (_name == effectSound[i].name)
+    //        {
+    //            for (int j = 0; j < audioEffects.Length; j++) //재생되어있지 않은 오디오를 찾기 
+    //            {
+    //                if (!audioEffects[j].isPlaying) //재생중이지 않은것은 안걸림 
+    //                {
+    //                    playSoundName[i] = effectSound[i].name; //재생중인 효과이름을 사운드 이름에 넣어줍니다
+    //                    audioEffects[i].clip = effectSound[i].clip;
+    //                    audioEffects[i].Play();
+    //                    audioEffects[i].loop = true;
+    //                    return;
+    //                }
+    //            }
+    //            //Debug.Log("모든 가용 AudioSource가 사용중입니다 ");
+    //            return;
+    //        }
+    //        //Debug.Log(_name+"사운드가 존재하지않습니다. ");
+    //    }
+
+    //}
 
     //BGM 사운드 플레이 
     public void PlayBGMSound(string _name)
@@ -86,10 +126,10 @@ public class SoundManger : MonoBehaviour
                 return;
 
             }
-            Debug.Log("모든 가용 AudioSource가 사용중입니다 ");
+            //Debug.Log("모든 가용 AudioSource가 사용중입니다 ");
             return;
         }
-        Debug.Log(_name + "사운드가 존재하지않습니다. ");
+        //Debug.Log(_name + "사운드가 존재하지않습니다. ");
     }
 
 
@@ -125,7 +165,7 @@ public class SoundManger : MonoBehaviour
                 return;
             }
         }
-        Debug.Log("재생중인" + _name + "사운드가 없습니다.");
+        //Debug.Log("재생중인" + _name + "사운드가 없습니다.");
     }
 
 

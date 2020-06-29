@@ -10,6 +10,9 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
+    [SerializeField]
+    private string moveSound;
+
     enum BlockType { H2, H3, V2, V3, Me };
     enum Axis { X, Y, Z };
     enum DirType { left, right, up, down, same };
@@ -38,9 +41,12 @@ public class Block : MonoBehaviour
 
     private MouseController_CarPuzzle mouseController;
 
+    private Vector3 _origin_pos;
+    private int[] _origin_location;
+
     void Start()
     {
-        speed = 10f;
+        speed = 10.0f;
 
         isMoving = false;
         direction = Vector3.zero;
@@ -61,6 +67,14 @@ public class Block : MonoBehaviour
         blockManager = GameObject.Find("BlockManager").GetComponent<BlockManager>();
 
         mouseController = GameObject.Find("MouseCotroller").GetComponent<MouseController_CarPuzzle>();
+
+        _origin_pos = transform.position;
+
+        _origin_location = new int[location.Length];
+        for (int i = 0; i < _origin_location.Length; i++)
+        {
+            _origin_location[i] = location[i];
+        }
     }
 
     void Update()
@@ -71,9 +85,11 @@ public class Block : MonoBehaviour
         if (isMoving)
         {
             float step = speed * Time.deltaTime;
+           
 
             transform.position = Vector3.MoveTowards(transform.position, destination, step);
             //transform.Translate(direction * step);
+
 
             if (transform.position == destination)
             {
@@ -119,6 +135,7 @@ public class Block : MonoBehaviour
             Set_location();
 
             isMoving = true;
+            SoundManger.instance.PlaySound(moveSound);
         }
         else //(axis == Axis.Y)
         {
@@ -132,6 +149,7 @@ public class Block : MonoBehaviour
             Set_location();
 
             isMoving = true;
+            SoundManger.instance.PlaySound(moveSound);
         }
     }
 
@@ -224,6 +242,16 @@ public class Block : MonoBehaviour
                 location[i] = bArry_index;
                 bArry_index += 6;
             }
+        }
+    }
+
+    public void ResetPosition()
+    {
+        transform.localPosition = _origin_pos;
+
+        for (int i = 0; i < location.Length; i++)
+        {
+            location[i] = _origin_location[i];
         }
     }
 }

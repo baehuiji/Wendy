@@ -194,7 +194,6 @@ C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Unity.SerializationLogic.dll
 C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Unity.DataContract.dll
 C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\ExCSS.Unity.dll
 C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
-C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Boo.Lang.dll
 C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\UnityEditor.UI.dll
 C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Unity.IvyParser.dll
 C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Unity.CecilTools.dll
@@ -274,3 +273,10 @@ C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\UnityEditor.UI.xml
 C:\Users\User01\Desktop\_Wendy\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
 C:\Users\User01\Desktop\_Wendy\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\User01\Desktop\_Wendy\obj\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Unity.Recorder.dll
+C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Unity.Recorder.Editor.dll
+C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Unity.Recorder.Editor.pdb
+C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Unity.Recorder.pdb
+C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\sc.posteffects.editor.pdb
+C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\sc.posteffects.runtime.pdb
+C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Boo.Lang.dll

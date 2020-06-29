@@ -41,6 +41,8 @@ public class MouseController_CarPuzzle : MonoBehaviour
 
     ChangeCam_1stage ChangeCam_script;
 
+    BlockManager blockManager_script;
+
     void Start()
     {
         if (_blocks == null)
@@ -65,6 +67,8 @@ public class MouseController_CarPuzzle : MonoBehaviour
         layerMask = 1 << LayerMask.NameToLayer("BlockPuzzle");
 
         ChangeCam_script = GameObject.FindObjectOfType<ChangeCam_1stage>();
+
+        blockManager_script = GameObject.FindObjectOfType<BlockManager>();
     }
 
     void Update()
@@ -82,6 +86,13 @@ public class MouseController_CarPuzzle : MonoBehaviour
                 {
                     // - 카메라 이동
                     ChangeCam_script.change_Camera(0);
+
+                    // - 블럭퍼즐 스크립트 해제
+                    this.enabled = false;
+
+                    // - 블럭 초기화
+                    blockManager_script.Reset();
+
                     return;
                 }
 

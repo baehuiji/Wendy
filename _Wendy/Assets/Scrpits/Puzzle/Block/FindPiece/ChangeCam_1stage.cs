@@ -35,10 +35,6 @@ public class ChangeCam_1stage : MonoBehaviour
         playerController = GameObject.FindObjectOfType<Player_1stage>();
     }
 
-    void Update()
-    {
-
-    }
 
     public void change_Camera(int type)
     {

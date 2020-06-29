@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class SelectSlot : MonoBehaviour
@@ -19,6 +20,16 @@ public class SelectSlot : MonoBehaviour
 
     public bool select_EndSlot = false;
 
+    public GameObject Up_Wheel; 
+    public GameObject Down_Wheel;
+
+    public Sprite Upsprite;
+    public Sprite UPLsprite;
+
+    public Sprite Downsprite;
+    public Sprite DownLsprite;
+
+
     void Start()
     {
         lastTargetPosition = slotPos[cur_index].position; // startTargetPos;
@@ -32,6 +43,15 @@ public class SelectSlot : MonoBehaviour
             return;
 
         transform.position = Vector3.Lerp(slotPos[last_index].position, slotPos[cur_index].position, currentLerpDistance);
+
+        if (last_index < cur_index)
+        {
+            Down_Wheel.GetComponent<Image>().sprite = DownLsprite;
+        }
+        if (cur_index < last_index)
+        {
+            Up_Wheel.GetComponent<Image>().sprite = UPLsprite;
+        }
 
         currentLerpDistance += Time.deltaTime / movingSpeedOrTime; //0.02f;
         if (currentLerpDistance > 1.2f && !select_EndSlot)
@@ -84,6 +104,9 @@ public class SelectSlot : MonoBehaviour
     {
         scrollStart = false;
         scrollEnd = true;
+
+        Up_Wheel.GetComponent<Image>().sprite = Upsprite;
+        Down_Wheel.GetComponent<Image>().sprite = Downsprite;
 
         //select_EndSlot = false;
     }

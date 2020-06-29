@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class NextStage_01 : MonoBehaviour
 {
+    //[SerializeField]
+    //private string DoorOpenCloseSound;
+
     private float FadeTime = 3f; // Fade효과 재생시간
 
     Image fadeImg;
@@ -43,6 +46,10 @@ public class NextStage_01 : MonoBehaviour
 
     IEnumerator fadeIntanim()
     {
+        yield return new WaitForSeconds(1.5f);
+
+        SoundManger.instance.PlaySound("opencloseDoor");
+
         Color fadecolor = fadeImg.color;
 
         while (fadecolor.a < 1f)

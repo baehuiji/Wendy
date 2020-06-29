@@ -17,8 +17,23 @@ public class GameMgr : MonoBehaviour
 
     Animator animator;
 
+    [SerializeField]
+    private string BGMSound;
+
     // - 선택슬롯
     public SelectSlot selectSlot_script;
+
+    //- 자막 (인벤)
+    public Image puzzleImage;
+    FadeAni_guide guide_script;
+    GuideCaption_Controller guideController_script;
+    private bool onceCaption = false;
+    // - 1스테이지 인벤토리 가이드 확인
+    public bool invenguide_on = true;
+
+    // - 옵션창
+    public GameObject optionPanel;
+    private bool pop = false;
 
     void Start()
     {
@@ -31,17 +46,58 @@ public class GameMgr : MonoBehaviour
         //RectTransform Inventory_Panel = GetComponent<RectTransform>();
 
         animator = Inventory_Panel.GetComponent<Animator>();
+        SoundManger.instance.PlayBGMSound(BGMSound);
+
+        // - 인벤토리 
+        if (puzzleImage != null)
+        {
+            guide_script = puzzleImage.gameObject.GetComponent<FadeAni_guide>();
+            guideController_script = puzzleImage.gameObject.GetComponent<GuideCaption_Controller>();
+        }
+        else
+        {
+            onceCaption = true;
+        }
     }
 
     void Update()
     {
+        // - 커서 락모드 테스트 
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        // - 옵션창
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            //Application.Quit();
+
+            if (!pop)
+            {
+                optionPanel.SetActive(true);
+                pop = true;
+            }
+            else
+            {
+                optionPanel.SetActive(false);
+                pop = false;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            if (!onceCaption)
+            {
+                onceCaption = true;
+                invenguide_on = false;
+                guide_script.InStartFadeAnim();
+            }
+
             if (check)
             {
                 check = false;

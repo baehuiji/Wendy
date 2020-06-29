@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class BoxOpen : MonoBehaviour
 {
+    [SerializeField]
+    private string boxsound;
+
     Animator animator;
+
+
 
     void Start()
     {
@@ -18,6 +23,9 @@ public class BoxOpen : MonoBehaviour
 
     public void set_aniBool()
     {
+        SoundManger.instance.PlaySound(boxsound);
+
+
         animator.SetBool("IsOpen", true);
     }
 }

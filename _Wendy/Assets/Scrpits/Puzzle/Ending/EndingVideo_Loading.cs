@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EndingVideo_Loading : MonoBehaviour
 {
@@ -65,6 +66,8 @@ public class EndingVideo_Loading : MonoBehaviour
         fadecolor.a = 1f;
         fadeImg.color = fadecolor;
 
-        seeEnding_script.playVideo();
+        // - 엔딩 영상 보기
+        //seeEnding_script.playVideo();
+        SceneManager.LoadScene("03_Ending");
     }
 }

@@ -37,7 +37,7 @@ public class InputClockAnswer : MonoBehaviour
         if (rotState) //이미 돌아가고 있는 상태인지
             return;
 
-        Debug.Log("Dddd");
+        //Debug.Log("Dddd");
 
         rotState = true;
         StartCoroutine("Rotate_Dial");

@@ -55,6 +55,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_PurchasedAsset\SSAO Pro\Scripts\Editor\SSAOProEditor.cs" />
+     <Compile Include="Assets\_PurchasedAsset\SSAO Pro\Scripts\Editor\Startup\SP_StartupWindow.cs" />
      <Compile Include="Assets\Editor\DynamicFogEditor.cs" />
      <Compile Include="Assets\Editor\DynamicFogEditorStyles.cs" />
      <Compile Include="Assets\Editor\DynamicFogExclusiveEditor.cs" />
@@ -75,34 +77,34 @@
      <Compile Include="Assets\PathCreator\Examples\Scripts\Editor\PathSceneToolEditor.cs" />
      <None Include="Assets\Editor\Resources\DepthTexPreview.shader" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Recorder.Editor">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Recorder">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Runtime">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>E:/Programs/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -303,19 +305,19 @@
  <HintPath>E:/Programs/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>E:/Programs/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -681,9 +683,17 @@
       <Project>{1629A4BA-F7A3-CC94-6A0F-6D3A345BD2B5}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="sc.posteffects.editor.csproj">
+      <Project>{3A05155C-8538-76C5-1D5C-6C238A6ED317}</Project>
+      <Name>sc.posteffects.editor</Name>
+    </ProjectReference>
     <ProjectReference Include="PathCreator.csproj">
       <Project>{2F913B9D-A330-488B-7E28-BA55AC9C1FF2}</Project>
       <Name>PathCreator</Name>
+    </ProjectReference>
+    <ProjectReference Include="sc.posteffects.runtime.csproj">
+      <Project>{8B036805-3468-3739-F28E-533A243B3031}</Project>
+      <Name>sc.posteffects.runtime</Name>
     </ProjectReference>
     <ProjectReference Include="PathCreatorEditor.csproj">
       <Project>{8631BDAF-5176-81CA-8783-B94C0762BFF4}</Project>

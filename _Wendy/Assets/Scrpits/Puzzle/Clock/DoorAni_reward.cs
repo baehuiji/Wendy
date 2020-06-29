@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DoorAni_reward : MonoBehaviour
 {
+
+
     private Animator aniController;
     private bool param = true;
 

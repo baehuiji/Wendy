@@ -16,6 +16,5 @@ MonoBehaviour:
   itemName: John
   itemType: 4
   itemImage: {fileID: 21300000, guid: 21e80ae866298b44bb7b3bf09d9ce204, type: 3}
-  itemPrefab: {fileID: 1545640169889159345, guid: 068dfb2698dbc5a4fab08b6cadf8de00,
-    type: 3}
+  itemPrefab: {fileID: 0}
   weaponType: 

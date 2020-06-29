@@ -16,6 +16,5 @@ MonoBehaviour:
   itemName: Crocodile
   itemType: 4
   itemImage: {fileID: 21300000, guid: a6cdb535f24d9584f805b7ac0c24a2ee, type: 3}
-  itemPrefab: {fileID: 8392378155568227416, guid: 6ca31d5afee6fde4aa437ed3745995e1,
-    type: 3}
+  itemPrefab: {fileID: 0}
   weaponType: 

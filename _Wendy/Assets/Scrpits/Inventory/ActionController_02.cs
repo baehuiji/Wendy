@@ -91,7 +91,6 @@ public class ActionController_02 : MonoBehaviour
                         if (hitInfo.transform.GetComponent<ItemSetUp>().item.itemName == "Doll")
                         {
                             DollCount++;
-                            Debug.Log(DollCount);
                         }
 
                     }
@@ -99,7 +98,6 @@ public class ActionController_02 : MonoBehaviour
 
                 if (hitInfo.transform.tag == "Item")
                 {
-                    Debug.Log(hitInfo.transform.GetComponent<ItemPickUp>().item.itemName + "획득했습니다");
                     theInventory.AcquireItem(hitInfo.transform.GetComponent<ItemPickUp>().item);
                     Destroy(hitInfo.transform.gameObject);
                     InfoDisappear();
@@ -133,7 +131,6 @@ public class ActionController_02 : MonoBehaviour
 
                     if (hitInfo.transform.GetComponent<ItemPickUp>().item.itemName == "Wendy")
                     {
-                        Debug.Log("웬디 입수완료 실행");
                         SoundManger.instance.PlaySound("light");
                         StageLight.SetActive(true);
                         Stagecollider.SetActive(false); // 뭔가 안됨. 이상함

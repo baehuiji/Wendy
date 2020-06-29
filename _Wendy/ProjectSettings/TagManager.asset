@@ -21,6 +21,21 @@ TagManager:
   - Puzzle
   - Door
   - SubClock
+  - Door_EB
+  - Action
+  - Wendy
+  - Snow
+  - ObjAni
+  - Note_CP
+  - Note
+  - Note_BP
+  - Note_EB
+  - Carpet
+  - Obstacle
+  - Drawer
+  - TitleBtn
+  - Tinkerbell
+  - Basement
   layers:
   - Default
   - TransparentFX
@@ -33,7 +48,7 @@ TagManager:
   - CameraObstacle
   - Light
   - Item
-  - Item_HJ
+  - ObjAni
   - Doll
   - Display
   - Floor
@@ -49,10 +64,10 @@ TagManager:
   - Basement
   - Flash
   - Snow
-  - 
-  - 
-  - 
-  - 
+  - Foot
+  - NotePage
+  - Toy
+  - Drawer
   - 
   m_SortingLayers:
   - name: Default

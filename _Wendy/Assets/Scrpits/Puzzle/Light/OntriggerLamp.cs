@@ -11,12 +11,22 @@ public class OntriggerLamp : MonoBehaviour
 
     public GameObject Pathmodel;
 
+    public GameObject TinkerSound;
 
-    public GameObject PlayerMove;
+    public GameObject PlayerMove; //게임 오브젝트- 플레이어. 여기서 수정 
+    public GameObject playerModeling;
+
+    public GameObject Enter_TinkerBell;
+    ParticleSystem event_TinkerBellEnter;
+
+    Animator _animator = null;
 
     Renderer[] renderer;
 
     Color alphaColor;
+
+
+    public AudioSource TinFlyAudio;
 
 
     //한번만 실행될 코루틴... 어.. 걍 끄면 될듯?
@@ -24,25 +34,28 @@ public class OntriggerLamp : MonoBehaviour
 
     private bool State = true;
 
+    
     public float Set = 6f; // 등불이 켜지는 시간
     public float FadeSet = 4f; //팅커벨이 사라지기 전까지 걸리는 딜레이 시간 
+    public float SoundSet = 2f;
 
     float time = 0f;
 
 
     void Start()
     {
-
+        _animator = playerModeling.GetComponent<Animator>();
         renderer = Pathmodel.GetComponentsInChildren<Renderer>();
+        event_TinkerBellEnter = Enter_TinkerBell.GetComponentInChildren<ParticleSystem>();
 
+        Enter_TinkerBell.gameObject.SetActive(false);
         // renderer.material.color = new Color(0, 0, 0, 0);
     }
 
 
     public void OnTriggerEnter(Collider other)
     {
-        if(State == true)
-        {
+
             if (other.transform.CompareTag("Player"))
             {
                 //Debug.Log("충돌! 액자 퍼즐 깻는가 안 깻는가에 대해서!");
@@ -52,15 +65,15 @@ public class OntriggerLamp : MonoBehaviour
 
                 SartDelay();
                 Fadein();
+            SoundPlay();
                 // 등불 퍼즐 애니메이션 실행. 램프 키고 끄기 -- 추가하기 
                 //  Tinkerbell_ani.Play();
 
-                State = false;
-            }
 
-            else
-                ColliderStay = false;
         }
+
+
+        
     }
 
     void SartDelay()
@@ -71,6 +84,8 @@ public class OntriggerLamp : MonoBehaviour
 
     IEnumerator LampLightDelay(float Set)
     {
+       // 
+        _animator.SetBool("IsWalking", false);
         PlayerMove.GetComponent<Player_HJ>().enabled = false;
         PlayerMove.GetComponent<Collider>().enabled = false;
 
@@ -83,8 +98,28 @@ public class OntriggerLamp : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
+        // PlayerMove.GetComponent<Player_HJ>().enabled = true;
+
         PlayerMove.GetComponent<Player_HJ>().enabled = true;
         PlayerMove.GetComponent<Collider>().enabled = true;
+
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+    }
+
+    void SoundPlay()
+    {
+        StartCoroutine(TinkerBellPlay());
+
+    }
+
+    IEnumerator TinkerBellPlay()
+    {
+
+        yield return new WaitForSeconds(SoundSet);
+
+        TinFlyAudio.Play();
+
+
     }
 
     void Fadein()
@@ -93,8 +128,7 @@ public class OntriggerLamp : MonoBehaviour
     }
 
 
-
-    IEnumerator FadeInTinkerBell(float FadeSet)
+IEnumerator FadeInTinkerBell(float FadeSet)
     {
 
         foreach (Renderer rend in renderer)
@@ -104,6 +138,7 @@ public class OntriggerLamp : MonoBehaviour
         // Color alpha = renderer.material.color;
 
         time = 0f;
+
 
         yield return new WaitForSeconds(FadeSet);
 
@@ -122,7 +157,33 @@ public class OntriggerLamp : MonoBehaviour
 
         }
         Pathmodel.gameObject.SetActive(false);
+
+
+
+
+        StartCoroutine(TinkerBellEnter());
+      //  Enter_TinkerBell.GetComponent<ParticleSystem>().Play();
+
+
+      //  Enter_TinkerBell.SetActive(false);
+        TinkerSound.SetActive(false);
+
     }
+    IEnumerator TinkerBellEnter()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Enter_TinkerBell.SetActive(true);
+
+        if(!event_TinkerBellEnter.isPlaying)
+        {
+            Enter_TinkerBell.SetActive(false);
+        }
+     //   yield return new WaitForSeconds(5f);
+
+
+    }
+
+
 
 
 }

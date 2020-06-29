@@ -8,6 +8,9 @@ using System.Collections.Generic;
 
 public class CustomFan : MonoBehaviour
 {
+    [SerializeField]
+    private AudioSource ClockSound;
+
     public Mesh generatedMesh;
     public int vc = 0;
 
@@ -207,6 +210,9 @@ public class CustomFan : MonoBehaviour
 
     public void cp_is_over()
     {
-        StopCoroutine(ChangeGauge());
+        ClockSound.gameObject.SetActive(false);
+        StopCoroutine(coroutine);
+
+        // - 시계사운드도 멈추기
     }
 }

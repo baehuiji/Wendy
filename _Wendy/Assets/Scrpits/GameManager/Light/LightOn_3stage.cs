@@ -25,10 +25,10 @@ public class LightOn_3stage : MonoBehaviour
             _lights3stage[i].SetActive(true);
         }
 
-        for (int i = 0; i < _lights2stage.Length; i++)
-        {
-            _lights2stage[i].SetActive(false);
-        }
+        //for (int i = 0; i < _lights2stage.Length; i++)
+        //{
+        //    _lights2stage[i].SetActive(false);
+        //}
     }
 
     public void LightOnFront()

@@ -47,9 +47,6 @@ void Start()
 
             if (_ClickDoor.Equals(gameObject))
             {
-                Debug.Log("문 클릭됨 ");
-                Debug.Log("애니메이션 실행코드진입 ");
-
                 See_Wendy(true);
 
             }

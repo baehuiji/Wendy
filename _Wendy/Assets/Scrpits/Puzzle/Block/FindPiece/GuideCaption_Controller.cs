@@ -10,6 +10,8 @@ public class GuideCaption_Controller : MonoBehaviour
     public Sprite sprite1;
     public Sprite sprite2;
     public Sprite sprite3;
+    public Sprite sprite4;
+    public int sprite_num;
 
     void Start()
     {
@@ -25,6 +27,8 @@ public class GuideCaption_Controller : MonoBehaviour
 
     public void change_sprite(int number)
     {
+        sprite_num = number;
+
         switch (number)
         {
             case 1:
@@ -36,10 +40,17 @@ public class GuideCaption_Controller : MonoBehaviour
             case 3:
                 _subImg.sprite = sprite3; // 퍼즐조각 습득
                 break;
+            case 4:
+                _subImg.sprite = sprite4; // 퍼즐조각 사용했다
+                break;
             default:
                 _subImg.enabled = false;
                 break;
         }
+    }
 
+    public void set_sprite1()
+    {
+        change_sprite(1);
     }
 }

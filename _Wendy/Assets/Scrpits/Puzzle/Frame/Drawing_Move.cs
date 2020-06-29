@@ -19,7 +19,7 @@ public class Drawing_Move : MonoBehaviour
 
     private Transform curTarget = null;
 
-    public int drawingNumber; //인덱스
+    public int drawingNumber; //인덱스 - 중요
 
     public float speed = 3f;
 
@@ -38,10 +38,10 @@ public class Drawing_Move : MonoBehaviour
         start3 = dtarget[4].gameObject.transform;
     }
 
-    void Update()
-    {
+    //void Update()
+    //{
 
-    }
+    //}
 
     IEnumerator drawing_Move(bool state, bool first)
     {

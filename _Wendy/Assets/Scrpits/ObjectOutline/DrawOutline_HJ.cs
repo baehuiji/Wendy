@@ -6,6 +6,8 @@ public class DrawOutline_HJ : MonoBehaviour
 {
     public List<EasyOutlineSystem> systems;
 
+    public bool check = false;
+
     void Start()
     {
         systems = new List<EasyOutlineSystem>();
@@ -27,7 +29,7 @@ public class DrawOutline_HJ : MonoBehaviour
 
     public void set_enabled(int index, bool enabled)
     {
-       systems[index].enabled = enabled;
+        systems[index].enabled = enabled;
     }
 
     public void set_destroy(int index)
@@ -38,8 +40,12 @@ public class DrawOutline_HJ : MonoBehaviour
         Destroy(tempOutline);
     }
 
-    public void Set()
+    public void set_check(bool b)
     {
-
+        check = b;
+    }
+    public bool get_outline_okay() // 외곽선이 안띄워져있을때 false
+    {
+        return check;
     }
 }

@@ -8,6 +8,9 @@ public class Flashlight_PRO : MonoBehaviour
     [SerializeField()]
     GameObject Lights; // all light effects and spotlight
 
+    [SerializeField]
+    private string Swith_Sound;
+
 
     private Light spotlight;
     private Material ambient_light_material;
@@ -21,6 +24,14 @@ public class Flashlight_PRO : MonoBehaviour
 
     [SerializeField]
     private Text actionText;
+    [SerializeField]
+    private Image actionImg;
+
+    float FlickerT = 0f;
+    bool delay = false;
+    private WaitForSeconds waitTime = new WaitForSeconds(0.025f);
+
+
 
     // Use this for initialization
     void Start()
@@ -32,7 +43,17 @@ public class Flashlight_PRO : MonoBehaviour
         ambient_light_material = Lights.transform.Find("ambient").GetComponent<Renderer>().material;
         ambient_mat_color = ambient_light_material.GetColor("_TintColor");
 
+        spotlight.intensity = 2;
+       
+
+        FlashRandom();
+
         FlashLightAppear();
+    }
+
+    void FlashRandom()
+    {
+        StartCoroutine(Randomlight());
     }
 
     void Update()
@@ -40,31 +61,74 @@ public class Flashlight_PRO : MonoBehaviour
         if (FlashCount == 0)
         {
             FlashLightAppear();
+        } 
+        else
+        {
+            FlashLightDisappear();
         }
 
         if (Input.GetKeyUp(KeyCode.Q))
         {
             if (value)
             {
-                Debug.Log("불켜기실행");
                 value = false;
                 Switch(false);
                 // Enable_Particles(false);
-                SoundManger.instance.PlaySound("Switch");
+                SoundManger.instance.PlaySound(Swith_Sound);
             }
             else
             {
-                Debug.Log("불끄기실행");
                 value = true;
                 Switch(true);
                 // Enable_Particles(true);
-                SoundManger.instance.PlaySound("Switch");
+                SoundManger.instance.PlaySound(Swith_Sound);
             }
             Switch(value);
             //  Enable_Particles(value);
 
             FlashCount++;
         }
+    }
+
+
+    IEnumerator Randomlight()
+    {
+        while (true)
+        {
+            FlickerT = 0;
+            int a = Random.Range(2, 6);
+
+
+            while (FlickerT <= 3.0f) // 선형보간이 진행됩니다. 선형보간의 이동이 끝날때까지! 
+            {
+                FlickerT += Time.deltaTime;
+
+                while (a > 0)
+                {
+                    float w = Random.Range(0f, 1f);
+                    float in_Light = Random.Range(0f, 1f);
+
+                    spotlight.intensity = in_Light;
+                    ambient_light_material.SetColor("_TintColor", new Color(ambient_mat_color.r, ambient_mat_color.g, ambient_mat_color.b, in_Light / 20));
+
+                    yield return new WaitForSeconds(w);
+
+
+                    a--;
+                }
+
+                //   Wall_E.transform.position = Vector3.Lerp(Wall_E.transform.position, E_WallStop, t);
+
+            }
+
+            spotlight.intensity = 2;
+            ambient_light_material.SetColor("_TintColor", new Color(ambient_mat_color.r, ambient_mat_color.g, ambient_mat_color.b, 1f / 20));
+
+            yield return new WaitForSeconds(20);
+
+        }
+
+
     }
 
     /// <summary>
@@ -93,11 +157,13 @@ public class Flashlight_PRO : MonoBehaviour
 
     private void FlashLightAppear()
     {
-        actionText.gameObject.SetActive(true);
-        actionText.text = "Q를 눌러 손전등 켜기";
+        //actionText.gameObject.SetActive(true);
+        //actionText.text = "Q를 눌러 손전등 켜기";
+        actionImg.gameObject.SetActive(true);
     }
     private void FlashLightDisappear()
     {
-        actionText.gameObject.SetActive(false);
+        //actionText.gameObject.SetActive(false);
+        actionImg.gameObject.SetActive(false);
     }
 }

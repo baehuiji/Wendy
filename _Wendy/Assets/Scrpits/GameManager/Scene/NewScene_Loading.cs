@@ -24,6 +24,9 @@ public class NewScene_Loading : MonoBehaviour
     GameMgr invenCtrler_script;
     FramePuzzle_Enter fpEnter_script;
 
+    // - 습득 쪽지 스크립트
+    SawNoteNumber _note_num_script;
+
     void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked; //커서 고정
@@ -40,7 +43,6 @@ public class NewScene_Loading : MonoBehaviour
 
         invenCtrler_script = GameObject.FindObjectOfType<GameMgr>();
 
-
         // - 카메라(3인칭/퍼즐),플레이어,인벤토리 작동불가
         actionCtrler_script.enabled = false;
         fpCam_script.enabled = false;
@@ -49,6 +51,10 @@ public class NewScene_Loading : MonoBehaviour
         invenCtrler_script.enabled = false;
         fpEnter_script.enabled = false;
 
+        // - 습득 쪽지 스크립트
+        _note_num_script = FindObjectOfType<SawNoteNumber>();
+
+        // - 페이드인
         InStartFadeAnim();
     }
 
@@ -82,11 +88,15 @@ public class NewScene_Loading : MonoBehaviour
         fadeImg.color = fadecolor;
 
         //고정해제
-        actionCtrler_script.enabled = true;
+        //actionCtrler_script.enabled = true;
         fpCam_script.enabled = true;
         playerCtrler_script.enabled = true;
         fpChangeCam_script.enabled = true;
         invenCtrler_script.enabled = true;
         fpEnter_script.enabled = true;
+
+        // 쪽지 개수 초기화
+        if (_note_num_script != null)
+            _note_num_script.init_2stage();
     }
 }

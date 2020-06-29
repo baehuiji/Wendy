@@ -30,6 +30,11 @@ public class DisplayManager_3stage : MonoBehaviour
         answer_Arry[7] = 37;
 
         displayLocation_script = GetComponentsInChildren<DisplayLocation>();
+
+        for (int i = 0; i < displayLocation_script.Length; i++)
+        {
+            displayLocation_script[i].set_locaNum(i);
+        }
     }
 
     void Update()
@@ -75,20 +80,58 @@ public class DisplayManager_3stage : MonoBehaviour
     //
     public void Create_sameOne()
     {
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < displayLocation_script.Length; i++)
         {
-            // - 비교, 원하는 위치에 원하는 인형인지 검사 -> @
             for (int j = 0; j < 8; j++)
             {
                 if (input_Arry[i] == doll_obj[j].GetComponent<ItemPickUp>().get_itemCode())
                 {
-                    displayLocation_script[i].setup_Doll(doll_obj[j]);
+                    MoveSelectedInputArry(
+                    j, displayLocation_script[i].get_DisplayPosition(), displayLocation_script[i].get_DisplayRotation());
                     break;
                 }
             }
-
-            //콜라이더 삭제 -> 다른 스크립트에서 함
-            //input_DollArry[index].GetComponent<BoxCollider>()
         }
+    }
+
+    public void MoveSelectedInputArry(int index, Vector3 newPos, Quaternion newRot)
+    {
+        doll_obj[index].transform.position = newPos;
+        doll_obj[index].transform.rotation = newRot;
+        doll_obj[index].SetActive(true);
+    }
+
+    // +
+    public int compareItemCode(int find)
+    {
+        ItemPickUp tempItemInfo = null;
+        for (int i = 0; i < doll_obj.Length; i++)
+        {
+            tempItemInfo = doll_obj[i].transform.GetComponent<ItemPickUp>();
+            if (find == tempItemInfo.get_itemCode())
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    // 배치퍼즐에 아무것도 놓아진게 있는지 확인 -> 장식장이 비워져있으면 false
+    public bool get_inputState()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            if (input_Arry[i] == 0)
+            {
+                continue;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

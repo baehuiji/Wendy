@@ -16,15 +16,15 @@ public class EnterClockAnswer : MonoBehaviour
 
     //private bool IsRightAnswer = false;
 
-    void Start()
-    {
+    //void Start()
+    //{
 
-    }
+    //}
 
-    void Update()
-    {
+    //void Update()
+    //{
 
-    }
+    //}
 
     public bool get_result()
     {

@@ -15,12 +15,27 @@ public class FadeAni_guide : MonoBehaviour
     float time = 0f;
 
     bool isPlaying = false;
-    
+
     private Coroutine coroutine;
+
+    // - 인벤토리 가이드를 다시 생기게 하기 위함
+    private GuideCaption_Controller guide_script;
+    GameMgr game_input_script;
 
     void Awake()
     {
         fadeImg = GetComponent<Image>();
+        init();
+        guide_script = GetComponent<GuideCaption_Controller>();
+        game_input_script = GameObject.FindObjectOfType<GameMgr>();
+    }
+
+    void init()
+    {
+        //인벤토리자막
+        Color fadecolor = fadeImg.color;
+        fadecolor.a = 1f;
+        fadeImg.color = fadecolor;
     }
 
     //페이드아웃
@@ -40,7 +55,7 @@ public class FadeAni_guide : MonoBehaviour
         time = 0f;
         start = 1f;
         end = 0f;
-        
+
         coroutine = StartCoroutine(fadeIntanim());
     }
     IEnumerator fadeIntanim()
@@ -62,6 +77,9 @@ public class FadeAni_guide : MonoBehaviour
         fadecolor.a = 0f;
         fadeImg.color = fadecolor;
 
+        if (game_input_script.invenguide_on)
+            InvenGuideON();
+
         isPlaying = false;
     }
 
@@ -72,6 +90,14 @@ public class FadeAni_guide : MonoBehaviour
 
         Color fadecolor = fadeImg.color;
         fadecolor.a = 0f;
+        fadeImg.color = fadecolor;
+    }
+
+    void InvenGuideON()
+    {
+        guide_script.set_sprite1();
+        Color fadecolor = fadeImg.color;
+        fadecolor.a = 1f;
         fadeImg.color = fadecolor;
     }
 }

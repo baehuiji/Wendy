@@ -36,34 +36,34 @@ public class HideTree : MonoBehaviour
             return false;
     }
 
-    private void SetMaterialTransparent()
-    {
-        foreach (Material m in Tree.GetComponent<Renderer>().materials)
-        {
-            m.SetFloat("_Mode", 2);
-            m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-            m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-            m.SetInt("_ZWrite", 0);
-            m.DisableKeyword("_ALPHATEST_ON");
-            m.EnableKeyword("_ALPHABLEND_ON");
-            m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            m.renderQueue = 3000;
-        }
-    }
+    //private void SetMaterialTransparent()
+    //{
+    //    foreach (Material m in Tree.GetComponent<Renderer>().materials)
+    //    {
+    //        m.SetFloat("_Mode", 2);
+    //        m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+    //        m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+    //        m.SetInt("_ZWrite", 0);
+    //        m.DisableKeyword("_ALPHATEST_ON");
+    //        m.EnableKeyword("_ALPHABLEND_ON");
+    //        m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+    //        m.renderQueue = 3000;
+    //    }
+    //}
 
-    private void SetMaterialOpaque()
-    {
-        foreach (Material m in Tree.GetComponent<Renderer>().materials)
-        {
-            m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
-            m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
-            m.SetInt("_ZWrite", 1);
-            m.DisableKeyword("_ALPHATEST_ON");
-            m.DisableKeyword("_ALPHABLEND_ON");
-            m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            m.renderQueue = -1;
-        }
-    }
+    //private void SetMaterialOpaque()
+    //{
+    //    foreach (Material m in Tree.GetComponent<Renderer>().materials)
+    //    {
+    //        m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+    //        m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+    //        m.SetInt("_ZWrite", 1);
+    //        m.DisableKeyword("_ALPHATEST_ON");
+    //        m.DisableKeyword("_ALPHABLEND_ON");
+    //        m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+    //        m.renderQueue = -1;
+    //    }
+    //}
     private void Set_unActive()
     {
         real_Tree.SetActive(true);

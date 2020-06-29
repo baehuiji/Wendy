@@ -26,6 +26,7 @@ public class ActivePuzzle_CP : MonoBehaviour
         if (other.transform.CompareTag("Player"))
         {
             CPmanager_script.set_active(true);
+            CPmanager_script.enabled = true;
         }
     }
 
@@ -36,7 +37,9 @@ public class ActivePuzzle_CP : MonoBehaviour
 
         if (other.transform.CompareTag("Player"))
         {
+            CPmanager_script.release_collider();
             CPmanager_script.set_active(false);
+            CPmanager_script.enabled = false;
         }
     }
 

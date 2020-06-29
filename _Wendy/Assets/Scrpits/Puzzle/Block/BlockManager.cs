@@ -8,13 +8,20 @@ using UnityEngine;
 
 public class BlockManager : MonoBehaviour
 {
-    private int[] blockArray = new int[36];
+    [SerializeField]
+    private string arriveSound;
 
-   // public GameObject[] blockArray = new int[36];
+    private int[] blockArray = new int[36];
+    public int[] originArray = new int[36];
+
+    public GameObject blockParent;
+    private Block[] block_scripts;
 
     void Start()
     {
         System.Array.Clear(blockArray, 0, blockArray.Length);
+
+        block_scripts = blockParent.GetComponentsInChildren<Block>();
     }
 
     void Update()
@@ -55,8 +62,11 @@ public class BlockManager : MonoBehaviour
             {
                 int index = start - 1;
 
-                if (index == 11 && bt == 4) //도착지점!!
-                    return false;
+                if (index == 11 && bt == 4) //도착지점!! --이 부분에는 다른 사운드를 출력해주는것으로? 
+                {
+                    SoundManger.instance.PlaySound(arriveSound); // 사운드가 안남. 왜? -해결
+
+                    return false; }
 
                 if ((start % 6) != 0)
                 {
@@ -115,5 +125,21 @@ public class BlockManager : MonoBehaviour
         return true;
     }
 
+    public void Reset()
+    {
+        //blockParent.transform.Translate(Vector3.forward * 2f);
 
+        for (int i = 0; i < block_scripts.Length; i++)
+        {
+            block_scripts[i].ResetPosition();
+        }
+
+        //blockParent.transform.Translate(Vector3.back * 2f);
+
+        //System.Array.Clear(blockArray, 0, blockArray.Length);
+        for (int i = 0; i < blockArray.Length; i++)
+        {
+            blockArray[i] = originArray[i];
+        }
+    }
 }

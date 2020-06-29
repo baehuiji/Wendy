@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 32e41e7d9a864e64faceb6c95fe90a83
+timeCreated: 1485797851
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: LOD1_big_lens
+    100002: LOD1_double_stand_1
+    100004: LOD1_double_stand_2
+    100006: LOD1_double_stand_3
+    100008: LOD1_lock_1
+    100010: LOD1_lock_2
+    100012: LOD1_main_tube
+    100014: LOD1_small_lens
+    100016: LOD1_stand_1
+    100018: LOD1_stand_2
+    100020: LOD1_stand_3
+    100022: //RootNode
+    100024: LOD1_tube_1
+    100026: LOD1_tube_2
+    100028: LOD1_tube_3
+    100030: LOD1_tube_4
+    400000: LOD1_big_lens
+    400002: LOD1_double_stand_1
+    400004: LOD1_double_stand_2
+    400006: LOD1_double_stand_3
+    400008: LOD1_lock_1
+    400010: LOD1_lock_2
+    400012: LOD1_main_tube
+    400014: LOD1_small_lens
+    400016: LOD1_stand_1
+    400018: LOD1_stand_2
+    400020: LOD1_stand_3
+    400022: //RootNode
+    400024: LOD1_tube_1
+    400026: LOD1_tube_2
+    400028: LOD1_tube_3
+    400030: LOD1_tube_4
+    2300000: LOD1_big_lens
+    2300002: LOD1_double_stand_1
+    2300004: LOD1_double_stand_2
+    2300006: LOD1_double_stand_3
+    2300008: LOD1_lock_1
+    2300010: LOD1_lock_2
+    2300012: LOD1_main_tube
+    2300014: LOD1_small_lens
+    2300016: LOD1_stand_1
+    2300018: LOD1_stand_2
+    2300020: LOD1_stand_3
+    2300022: //RootNode
+    2300024: LOD1_tube_1
+    2300026: LOD1_tube_2
+    2300028: LOD1_tube_3
+    2300030: LOD1_tube_4
+    3300000: LOD1_big_lens
+    3300002: LOD1_double_stand_1
+    3300004: LOD1_double_stand_2
+    3300006: LOD1_double_stand_3
+    3300008: LOD1_lock_1
+    3300010: LOD1_lock_2
+    3300012: LOD1_main_tube
+    3300014: LOD1_small_lens
+    3300016: LOD1_stand_1
+    3300018: LOD1_stand_2
+    3300020: LOD1_stand_3
+    3300022: //RootNode
+    3300024: LOD1_tube_1
+    3300026: LOD1_tube_2
+    3300028: LOD1_tube_3
+    3300030: LOD1_tube_4
+    4300000: LOD1_main_stand
+    4300002: LOD1_double_stand_2
+    4300004: LOD1_stand_2
+    4300006: LOD1_double_stand_1
+    4300008: LOD1_stand_1
+    4300010: LOD1_double_stand_3
+    4300012: LOD1_stand_3
+    4300014: LOD1_main_tube
+    4300016: LOD1_lock_1
+    4300018: LOD1_tube_1
+    4300020: LOD1_big_lens
+    4300022: LOD1_tube_2
+    4300024: LOD1_tube_3
+    4300026: LOD1_tube_4
+    4300028: LOD1_small_lens
+    4300030: LOD1_lock_2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

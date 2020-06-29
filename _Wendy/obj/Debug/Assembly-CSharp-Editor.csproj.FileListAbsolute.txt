@@ -1156,3 +1156,9 @@ C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\PathCreator.pdb
 C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\PathCreatorEditor.pdb
 C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Unity.Postprocessing.Editor.pdb
 C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Unity.Postprocessing.Runtime.pdb
+C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Unity.Recorder.dll
+C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Unity.Recorder.Editor.dll
+C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Unity.Recorder.Editor.pdb
+C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Unity.Recorder.pdb
+C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\sc.posteffects.editor.pdb
+C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\sc.posteffects.runtime.pdb

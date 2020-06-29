@@ -20,7 +20,7 @@ public class Player_1stage : MonoBehaviour
 
     private float currentAngle;
     private float desiredAngle;
-    private float angle;
+    public float angle;
     public GameObject target;
 
     Ray ray;
@@ -51,12 +51,13 @@ public class Player_1stage : MonoBehaviour
     public GameObject modelingParent;
     private bool cr_check = false;
     private bool cr_in_check = false;
-    private IEnumerator coroutine = null; //Coroutine
 
+    private Coroutine _coroutine = null; //원회전 원상태로 회복을 하기 위한 Coroutine
+    private bool rotAni = false;
 
-    //footprint를 사용하기 위한 컨트롤러
-    CharacterController controller;
-    private Vector3 moveDirection = Vector3.zero;
+    // - footprint를 사용하기 위한 컨트롤러
+    //CharacterController controller;
+    //private Vector3 moveDirection = Vector3.zero;
 
     void Start()
     {
@@ -79,7 +80,7 @@ public class Player_1stage : MonoBehaviour
 
         dir = Vector3.zero;
 
-        controller = GetComponent<CharacterController>();
+        //controller = GetComponent<CharacterController>();
     }
 
     void Update()
@@ -131,7 +132,17 @@ public class Player_1stage : MonoBehaviour
             //이동
             //ver1
             dir = h * Vector3.left + v * Vector3.back; // 회전방향
-            transform.position = transform.position + dir * movementSpeed * Time.deltaTime;
+
+            //if (v != 0 & h != 0)
+            //{
+            //    movementSpeed = 0.75f;
+            //}
+            //else
+            //{
+            //    movementSpeed = 1.5f;
+            //}
+
+            transform.position = transform.position + dir.normalized * movementSpeed * Time.deltaTime;
 
             //캐릭터의 원회전
             {
@@ -190,6 +201,8 @@ public class Player_1stage : MonoBehaviour
 
             // y , 캐릭터가 향하는방향
             atanAngle = CalculateAngle(-standard.transform.forward, dir);
+            //Debug.Log(atanAngle.ToString());
+
             currentAngle = target.transform.eulerAngles.y;
             desiredAngle = atanAngle;
             angle = Mathf.LerpAngle(currentAngle, desiredAngle, Time.deltaTime * turningSpeed);
@@ -207,7 +220,7 @@ public class Player_1stage : MonoBehaviour
 
         // - 회전 적용
         Quaternion rotation = Quaternion.Euler(0, angle, 0);
-        target.transform.rotation = rotation; 
+        target.transform.rotation = rotation;
 
         Quaternion rotation2 = Quaternion.Euler(xangle, 0, zangle);
         target_modeling.localRotation = rotation2;
@@ -240,25 +253,52 @@ public class Player_1stage : MonoBehaviour
         return Mathf.Clamp(angle, min, max);
     }
 
-    IEnumerator RotateAround_modeling() //코루틴이 진행되는 동안만 원회전 된다
+    public void SetunActive()
     {
-        cr_check = true; //코루틴 시작
-        cr_in_check = true;
+        _animator.SetBool("IsWalking", false);
+        check = false;
+    }
 
-        while (cr_in_check) //코루틴 진행
+    public void set_Angle(float a)
+    {
+        angle = a;
+    }
+
+    public void ReturnPivotRot()
+    {
+        if (rotAni == true) //중복재생방지
         {
-            if (Mathf.Abs(zangle) == 5f)
-            {
-                cr_in_check = false;
-
-                desiredZAngle = 0f;
-            }
-            else
-            {
-                yield return null;
-            }
+            //return;
+            StopCoroutine(_coroutine);
         }
 
-        cr_check = false;
+        _coroutine = StartCoroutine(return_pivotRot());
+    }
+
+    IEnumerator return_pivotRot()
+    {
+        rotAni = true;
+
+        desiredXAngle = 0f;
+        desiredZAngle = 0f;
+
+        while (true)
+        {
+            currentXAngle = target_modeling.transform.eulerAngles.x;
+            xangle = Mathf.LerpAngle(currentXAngle, desiredXAngle, Time.deltaTime * ZturningSpeed);
+            currentZAngle = target_modeling.transform.eulerAngles.z;
+            zangle = Mathf.LerpAngle(currentZAngle, desiredZAngle, Time.deltaTime * ZturningSpeed);
+
+            Quaternion rotation2 = Quaternion.Euler(xangle, 0, zangle);
+            target_modeling.localRotation = rotation2;
+
+            if (Mathf.Abs(xangle) == 0.1f && Mathf.Abs(zangle) == 0.1f)
+                break;
+            else
+                yield return null; // new WaitForSeconds(0.1f);
+        }
+
+        rotAni = false;
+        //yield break;
     }
 }

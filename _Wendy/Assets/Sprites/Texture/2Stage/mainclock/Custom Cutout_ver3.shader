@@ -19,7 +19,7 @@
 		CGPROGRAM
 
 #pragma surface surf Standard alphatest:_Cutoff fullforwardshadows
-
+//#pragma surface surf Lambert addshadow alphatest:_Cutoff vertex:winganim
 #pragma target 3.0
 
 		sampler2D _MainTex;

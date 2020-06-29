@@ -77,7 +77,7 @@ public class FramePuzzle_ChangeCam : MonoBehaviour
             _info.SetActive(false);
 
             // - 메인카메라,플레이어 스크립트 off
-            actionController.enabled = false;
+            //actionController.enabled = false;
             mainCamMove_script.enabled = false;
             puzzleEnter_script.enabled = false;
 
@@ -117,7 +117,7 @@ public class FramePuzzle_ChangeCam : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         playerController.enabled = true;
-        actionController.enabled = true;
+        //actionController.enabled = true;
         mainCamMove_script.enabled = true;
         puzzleEnter_script.enabled = true;
     }

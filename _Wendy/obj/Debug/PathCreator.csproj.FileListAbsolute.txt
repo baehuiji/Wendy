@@ -265,4 +265,3 @@ C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.x
 C:\Users\User01\Desktop\_Wendy\obj\Debug\PathCreator.csprojResolveAssemblyReference.cache
 C:\Users\User01\Desktop\_Wendy\obj\Debug\PathCreator.dll
 C:\Users\User01\Desktop\_Wendy\obj\Debug\PathCreator.pdb
-C:\Users\User01\Desktop\_Wendy\Temp\bin\Debug\Boo.Lang.dll

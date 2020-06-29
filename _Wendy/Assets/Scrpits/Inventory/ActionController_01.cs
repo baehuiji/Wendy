@@ -11,6 +11,13 @@ public class ActionController_01 : MonoBehaviour
     public Inventory theInventory;
 
     [SerializeField]
+    private string itemgainsound;
+
+    [SerializeField]
+    private string itemusesound;
+
+
+    [SerializeField]
     private float range = 10f; // 충돌 체크 구의 반경
     [SerializeField]
     private float length = 10f; // 충돌 체크의 최대 거리 
@@ -19,7 +26,7 @@ public class ActionController_01 : MonoBehaviour
     private LayerMask layerMask;
 
     [SerializeField]
-    private GameObject target;
+    private GameObject target; // center
 
     [SerializeField]
     private GameObject P_target;//타겟 발 오브젝트와 연결된 pivot
@@ -68,8 +75,22 @@ public class ActionController_01 : MonoBehaviour
     public GameObject puzzleKey;
 
     ChangeCam_1stage ChangeCam_script;
+    MouseController_CarPuzzle CarPuzzle_script;
 
     BoxOpen boxOpen_script;
+
+
+    ViewNote_01 viewNote_script;
+    bool popupNote = false;
+    bool opening = false;
+
+    CheckRange checkRange_Script;
+
+    // - 쪽지 매니저
+    NoteManger notemager;
+
+    // - 쪽지 상태 스크립트
+    SawNoteNumber note_num_script; // 파괴 X 싱글톤, 노트모은개수 확인
 
     void Start()
     {
@@ -86,8 +107,19 @@ public class ActionController_01 : MonoBehaviour
         guideController_script = puzzleImage.gameObject.GetComponent<GuideCaption_Controller>();
 
         ChangeCam_script = GameObject.FindObjectOfType<ChangeCam_1stage>();
+        CarPuzzle_script = GameObject.FindObjectOfType<MouseController_CarPuzzle>();
 
         boxOpen_script = GameObject.FindObjectOfType<BoxOpen>();
+
+        viewNote_script = GameObject.FindObjectOfType<ViewNote_01>();
+
+        checkRange_Script = GameObject.FindObjectOfType<CheckRange>();
+
+        // 쪽지 매니저
+        notemager = FindObjectOfType<NoteManger>();
+
+        // 쪽지 상태 (싱글톤)
+        note_num_script = FindObjectOfType<SawNoteNumber>();
     }
 
     void Update()
@@ -95,27 +127,66 @@ public class ActionController_01 : MonoBehaviour
         //if (ChangeCam_script.get_PuzzlPlay())
         //    return;
 
-        CheckItem();
+        if (!popupNote)
+        {
+            CheckItem();
+        }
         TryAction();
     }
 
-    private void OnDrawGizmos()  //OnDrawGizmosSelected()
-    {
-        Handles.color = isCollision ? _red : _blue;
-        Handles.DrawSolidArc(target.transform.position, Vector3.up, target.transform.forward, angleRange / 2, distance);
-        //                     타겟에의 위치에서, 타겟의 위치 앞전방으로,위아래 판별, 각도는 몇만큼, 방향은 몇만큼
-        Handles.DrawSolidArc(target.transform.position, Vector3.up, target.transform.forward, -angleRange / 2, distance);
-        //                     타겟에의 위치에서, 타겟의 위치 앞전방으로 ,위아래 판별, 각도는 몇만큼의 -, 방향은 몇만큼. 
+    //private void OnDrawGizmos()  //OnDrawGizmosSelected()
+    //{
+    //    Handles.color = isCollision ? _red : _blue;
+    //    Handles.DrawSolidArc(target.transform.position, Vector3.up, target.transform.forward, angleRange / 2, distance);
+    //    //                     타겟에의 위치에서, 타겟의 위치 앞전방으로,위아래 판별, 각도는 몇만큼, 방향은 몇만큼
+    //    Handles.DrawSolidArc(target.transform.position, Vector3.up, target.transform.forward, -angleRange / 2, distance);
+    //    //                     타겟에의 위치에서, 타겟의 위치 앞전방으로 ,위아래 판별, 각도는 몇만큼의 -, 방향은 몇만큼. 
 
-        Gizmos.DrawSphere(P_target.transform.position, range);
-    }
+    //    Gizmos.DrawSphere(P_target.transform.position, range);
+    //}
 
     private void TryAction()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //CheckItem();
-            CanPickUp();
+            // - 애니메이션쪽지 (2스테이지로 옮기기)
+            //if (!popupNote)
+            //{
+            //    //CheckItem();
+            //    CanPickUp();
+            //}
+            //else
+            //{
+            //    if (!opening)
+            //    {
+            //        //쪽지 열기 애니메이션 (이동은 CanPickUp에서)
+            //        if (viewNote_script.OpenAni_Note())
+            //            opening = true;
+            //    }
+            //    else
+            //    {
+            //        //접기 + 원위치로 이동
+            //        if (viewNote_script.EndAni_Note())
+            //        {
+            //            opening = false;
+            //            popupNote = false; //->위 호출이 다끝나면 변하게해야함
+            //        }
+            //    }
+            //}
+
+
+            if (!popupNote)
+            {
+                CanPickUp();
+            }
+            else
+            {
+                if (viewNote_script.EndAni_Note()) //코루틴이 실행되는 동안에는 X
+                {
+                    opening = false;
+                    popupNote = false; //->위 호출이 다끝나면 변하게해야함
+                }
+            }
         }
     }
 
@@ -135,12 +206,16 @@ public class ActionController_01 : MonoBehaviour
                         //Debug.Log(hitInfo.transform.GetComponent<ItemPickUp>().item.itemName + "획득했습니다");
                         Item hit_item = hitInfo.transform.GetComponent<ItemPickUp>().item;
 
+                        //퍼즐조각 입수 사운드 
+                        SoundManger.instance.PlaySound(itemgainsound);
+
+
                         // - 퍼즐조각 수집 개수 증가
                         BlockCount++;
                         if (BlockCount == 1)
                         {
-                            guideController_script.change_sprite(1);
-                            guide_script.InStartFadeAnim();
+                            //guideController_script.change_sprite(1);
+                            //guide_script.InStartFadeAnim();
                         }
                         else
                         {
@@ -181,10 +256,16 @@ public class ActionController_01 : MonoBehaviour
                         // - 퍼즐 배치
                         if (select_itemCode == 110)
                         {
+                            //퍼즐조각 배치 사운드
+                            SoundManger.instance.PlaySound(itemusesound);
+
                             //// - 텍스트 출력
                             //puzzleText.text = "퍼즐조각을 배치했다";
                             ////페이드아웃
                             //text_script.InStartFadeAnim();
+
+                            guideController_script.change_sprite(4);
+                            guide_script.InStartFadeAnim();
 
                             UseCount++;
 
@@ -202,7 +283,7 @@ public class ActionController_01 : MonoBehaviour
 
                                 // - info
 
-                                // - 외곽선 , 빈퍼즐블럭 없애기
+                                // - 외곽선 , 빈퍼즐블럭 비활성화
                                 hitInfo.transform.gameObject.SetActive(false);
                                 OutlineController.set_enabled(pre_ol_index, false);
                                 puzzleKey.gameObject.SetActive(true);
@@ -224,27 +305,60 @@ public class ActionController_01 : MonoBehaviour
                         // - 카메라 이동
                         ChangeCam_script.change_Camera(1);
 
+                        // - 스크립트 on
+                        CarPuzzle_script.enabled = true;
+
                         // - info 없애기
                         InfoDisappear();
                         //text_script.stop_coroutine();
                         guide_script.stop_coroutine();
                     }
-                    if (hit_itemCode == 113) //상자 일때
-                    {
-                        // - 콜라이더 비활성화
-                        hitInfo.collider.enabled = false;
+                    //if (hit_itemCode == 113) //상자 일때
+                    //{
+                    //    // - 콜라이더 비활성화
+                    //    hitInfo.collider.enabled = false;
 
-                        // - 외곽선 없애기
-                        //hitInfo.transform.gameObject.SetActive(false);
-                        OutlineController.set_enabled(pre_ol_index, false);
+                    //    // - 외곽선 없애기
+                    //    //hitInfo.transform.gameObject.SetActive(false);
+                    //    OutlineController.set_enabled(pre_ol_index, false);
 
-                        // - info 없애기
-                        InfoDisappear();
+                    //    // - info 없애기
+                    //    InfoDisappear();
 
-                        // - 상자 애니메이션
-                        boxOpen_script.set_aniBool();
-                    }
+                    //    // - 상자 애니메이션
+                    //    boxOpen_script.set_aniBool();
+                    //}
+
+                    return;
                 }
+            }
+
+            if (hitInfo.transform.CompareTag("Note_BP"))
+            {
+                // - 쪽지 상태
+                hitInfo.transform.GetComponent<PageNote>().CheckAddcount(1);
+                note_num_script.SetNoteCount();
+
+                // - 팝업 상태
+                popupNote = true;
+
+                viewNote_script.StartAni_Note();
+
+                InfoDisappear();
+                OutlineController.set_enabled(pre_ol_index, false);
+
+                return;
+            }
+
+            if (hitInfo.transform.CompareTag("ObjAni"))
+            {
+                //애니메이션 출력 전 이동
+                InteractionMoving interactMoving_script = hitInfo.transform.GetComponent<InteractionMoving>();
+                interactMoving_script.StartToMove();
+
+                InfoDisappear();
+
+                return;
             }
         }
     }
@@ -252,30 +366,52 @@ public class ActionController_01 : MonoBehaviour
     private void CheckItem()
     {
         if (Physics.SphereCast(P_target.transform.position, range, Vector3.up, out hitInfo, length, layerMask))
+        //                 레이저 발사 위치            , 구의 반경, 발사 방향,      충돌 결과,     최대거리, 레이어마스크
+        //if(checkRange_Script.checkItem())
         {
-            //                 레이저 발사 위치            , 구의 반경, 발사 방향,      충돌 결과,     최대거리, 레이어마스크
+            //hitInfo = checkRange_Script.Get_hitInfo();
 
-            // = 외곽선 =
-            ItemPickUp pieceItem_script = hitInfo.transform.GetComponent<ItemPickUp>();
-
-            if (CheckAllSectorform(hitInfo)) //hitInfo가 범위 안에 있으면 true
+            if (hitInfo.transform.CompareTag("ObjAni") == false)
             {
-                // - info 띄우기
-                ItemInfoAppear(pieceItem_script.item);
+                // = 외곽선 =
+                ItemPickUp pieceItem_script = hitInfo.transform.GetComponent<ItemPickUp>();
 
-                // - 외곽선
-                OutlineController.set_enabled(pieceItem_script.outlineIndex, true);
-                pre_ol_index = pieceItem_script.outlineIndex;
+                if (CheckAllSectorform(hitInfo)) //hitInfo가 범위 안에 있으면 true
+                {
+                    // - info 띄우기
+                    ItemInfoAppear(pieceItem_script.item);
+
+                    // - 외곽선
+                    int temp_index = pieceItem_script.outlineIndex;
+                    OutlineController.set_enabled(pieceItem_script.outlineIndex, true);
+
+                    if (temp_index != pre_ol_index)
+                    {
+                        OutlineController.set_enabled(pre_ol_index, false);
+                        pre_ol_index = pieceItem_script.outlineIndex;
+                    }
+                }
+                else
+                {
+                    // - info 사라지게
+                    InfoDisappear();
+
+                    // - 외곽선 사라짐
+                    OutlineController.set_enabled(pre_ol_index, false);
+
+                    isCollision = false;
+                }
             }
             else
             {
-                // - info 사라지게
-                InfoDisappear();
+                if (CheckAllSectorform(hitInfo)) //hitInfo가 범위 안에 있으면 true
+                {
+                    // - info 띄우기
+                    //ItemInfoAppear(pieceItem_script.item);
 
-                // - 외곽선 사라짐
-                OutlineController.set_enabled(pre_ol_index, false);
-
-                isCollision = false;
+                    pickupActivated = true;
+                    actionImage.gameObject.SetActive(true);
+                }
             }
         }
         else
@@ -289,7 +425,8 @@ public class ActionController_01 : MonoBehaviour
     private bool CheckAllSectorform(RaycastHit tempHit) //범위안에 드는지 검사
     {
         dotValue = Mathf.Cos(Mathf.Deg2Rad * (angleRange / 2));
-        direction = tempHit.transform.position - target.transform.position;
+        //direction = tempHit.transform.position - target.transform.position;
+        direction = tempHit.point - target.transform.position;
         if (direction.magnitude < distance)
         {
             if (Vector3.Dot(direction.normalized, target.transform.forward) > dotValue)

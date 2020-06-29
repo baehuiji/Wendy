@@ -56,14 +56,63 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_INGINGING\Hee-ji\_____.cs" />
-     <Compile Include="Assets\_INGINGING\Hee-ji\_outline\SetOutline.cs" />
-     <Compile Include="Assets\_INGINGING\Hee-ji\Clock_sub\ChangeCam_SubClock.cs" />
-     <Compile Include="Assets\_INGINGING\Hee-ji\Clock_sub\MakeClockSee.cs" />
-     <Compile Include="Assets\_INGINGING\Hee-ji\Clock_sub\SeeingSubClock.cs" />
-     <Compile Include="Assets\_INGINGING\Hee-ji\sight_1\PlayerRange_1stage.cs" />
-     <Compile Include="Assets\_INGINGING\Hee-ji\sight_1\Sight_1stage.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\1\_outline\SetOutline.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\1\AI\IState.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\1\AI\PlayerRange.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\1\AI\TempManager.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\1\AI\Wendy_IdleState.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\1\AI\Wendy_MoveState.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\1\AI\Wendy_PlayState.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\1\AI\WendyAI.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\1\Clock_sub\ChangeCam_SubClock.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\1\Clock_sub\MakeClockSee.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\1\Clock_sub\SeeingSubClock.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\1\Clock_sub\SubClockInfo.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\1\ekza_reward\Drawer_FP.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\1\sight_1\PlayerRange_1stage.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\1\sight_1\Sight_1stage.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_1stage\Ani\fixAxisRot\FixAxisRotation.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_1stage\Ani\InteractionAnimation.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_1stage\Ani\InteractionMoving.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_1stage\Ani\InteracttAniManager.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_1stage\paper\ViewNote_01.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_2-3stage_option\OptionCam.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_2-3stage_option\OptionManager.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_2-3stage_option\OptionMgr.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_2stge\ActionController_Drawer.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_2stge\Item\Doll\DollAniManager.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_2stge\Item\Doll\MockingDollAni.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_2stge\ObstacleReader.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_2stge\paper_Ani\ActionController_TestNote.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_2stge\paper_Ani\FlodNote.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_2stge\paper_Ani\ViewNote_Ani_02.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_2stge\SawNoteNumber.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_2stge\VolumeTrigger.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_3stage\DoorOpen_Basement.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_ending\EndingPanel.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_Loading\PrologueController.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_title\BrightnessController.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_title\GameManager.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_title\temp\GameManager_Option.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_title\temp\OptionController.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_title\temp\Testtt.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\2_title\TitlePanel.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\NavMesh_runtime\LocalNavMeshBuilder.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\NavMesh_runtime\NavMeshSourceTag.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\SceneLoad.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\TestRay.cs" />
+     <Compile Include="Assets\_INGINGING\Hee-ji\view_Test (+)\CheckRange.cs" />
      <Compile Include="Assets\_PurchasedAsset\_Flashlight PRO\_Assets\scripts\Flashlight_PRO.cs" />
-     <Compile Include="Assets\_PurchasedAsset\3DTOYS\rotatecamera.cs" />
+     <Compile Include="Assets\_PurchasedAsset\_Flashlight PRO\_Assets\scripts\OnTrigger_Flash.cs" />
+     <Compile Include="Assets\_PurchasedAsset\BadDog\VolumetricLighting\Examples\Scripts\AutoRotation.cs" />
+     <Compile Include="Assets\_PurchasedAsset\BadDog\VolumetricLighting\Examples\Scripts\FPSCounter.cs" />
+     <Compile Include="Assets\_PurchasedAsset\BadDog\VolumetricLighting\Scripts\BGMainLight.cs" />
+     <Compile Include="Assets\_PurchasedAsset\BadDog\VolumetricLighting\Scripts\BGPostProcessingBehavior.cs" />
+     <Compile Include="Assets\_PurchasedAsset\BadDog\VolumetricLighting\Scripts\BGShaderIDs.cs" />
+     <Compile Include="Assets\_PurchasedAsset\BadDog\VolumetricLighting\Scripts\BGVolumetricLighting.cs" />
+     <Compile Include="Assets\_PurchasedAsset\Falling_Dust\Scripts\BurningMatch.cs" />
+     <Compile Include="Assets\_PurchasedAsset\Falling_Dust\Scripts\Camera_Shake.cs" />
+     <Compile Include="Assets\_PurchasedAsset\Falling_Dust\Scripts\Mortar_Hit.cs" />
      <Compile Include="Assets\_PurchasedAsset\Fog\Scripts\DynamicFog.cs" />
      <Compile Include="Assets\_PurchasedAsset\Fog\Scripts\DynamicFogBase.cs" />
      <Compile Include="Assets\_PurchasedAsset\Fog\Scripts\DynamicFogExclusive.cs" />
@@ -78,6 +127,10 @@
      <Compile Include="Assets\_PurchasedAsset\Snow\Scripts\GlobalSnowImageEffect.cs" />
      <Compile Include="Assets\_PurchasedAsset\Snow\Scripts\GlobalSnowVolume.cs" />
      <Compile Include="Assets\_PurchasedAsset\Snow\Scripts\GlobalSnowWMAPI.cs" />
+     <Compile Include="Assets\_PurchasedAsset\SSAO Pro\Scripts\Attributes\ColorUsageAttribute.cs" />
+     <Compile Include="Assets\_PurchasedAsset\SSAO Pro\Scripts\Attributes\HelpURLAttribute.cs" />
+     <Compile Include="Assets\_PurchasedAsset\SSAO Pro\Scripts\SSAOPro.cs" />
+     <Compile Include="Assets\_PurchasedAsset\X\3DTOYS\rotatecamera.cs" />
      <Compile Include="Assets\Custom\Mirror\PlayerMove.cs" />
      <Compile Include="Assets\Custom\Mirror\ReversalCamera.cs" />
      <Compile Include="Assets\Custom\Mirror\RunToTarget.cs" />
@@ -100,15 +153,23 @@
      <Compile Include="Assets\Scrpits\Camera\FirstPersonCamera.cs" />
      <Compile Include="Assets\Scrpits\Camera\FollowCamera.cs" />
      <Compile Include="Assets\Scrpits\Camera\SnowController.cs" />
+     <Compile Include="Assets\Scrpits\Cellar\Cellar_Manager.cs" />
+     <Compile Include="Assets\Scrpits\Cellar\Cellar_Wendy.cs" />
      <Compile Include="Assets\Scrpits\Cellar\CellarDoorCollider.cs" />
      <Compile Include="Assets\Scrpits\Cellar\ChangeCam_2stage.cs" />
      <Compile Include="Assets\Scrpits\Cellar\Fade\FadeManager.cs" />
+     <Compile Include="Assets\Scrpits\Character\FootSound_1S.cs" />
+     <Compile Include="Assets\Scrpits\Character\FootSound_2S.cs" />
      <Compile Include="Assets\Scrpits\Character\Player.cs" />
      <Compile Include="Assets\Scrpits\Character\Player_1stage.cs" />
      <Compile Include="Assets\Scrpits\Character\Player_HJ.cs" />
+     <Compile Include="Assets\Scrpits\Character\reFootSound_2S.cs" />
      <Compile Include="Assets\Scrpits\Character\ThreePersonCamera_1stage.cs" />
+     <Compile Include="Assets\Scrpits\Character\Wendy_FootSound.cs" />
      <Compile Include="Assets\Scrpits\Decorating\Box_1stage\BoxOpen.cs" />
+     <Compile Include="Assets\Scrpits\GameManager\Audio\RandomSound.cs" />
      <Compile Include="Assets\Scrpits\GameManager\Audio\SoundManager\SoundManger.cs" />
+     <Compile Include="Assets\Scrpits\GameManager\GameOver\GameOverManger.cs" />
      <Compile Include="Assets\Scrpits\GameManager\Light\LightOn_3stage.cs" />
      <Compile Include="Assets\Scrpits\GameManager\Scene\ChangeScene01.cs" />
      <Compile Include="Assets\Scrpits\GameManager\Scene\NewScene_Loading.cs" />
@@ -120,7 +181,6 @@
      <Compile Include="Assets\Scrpits\Inventory\ActionController_Ending.cs" />
      <Compile Include="Assets\Scrpits\Inventory\ActionController_GetKey.cs" />
      <Compile Include="Assets\Scrpits\Inventory\Box_Block.cs" />
-     <Compile Include="Assets\Scrpits\Inventory\down_Wheel_sprite.cs" />
      <Compile Include="Assets\Scrpits\Inventory\GameMgr.cs" />
      <Compile Include="Assets\Scrpits\Inventory\Inventory.cs" />
      <Compile Include="Assets\Scrpits\Inventory\Item.cs" />
@@ -128,7 +188,11 @@
      <Compile Include="Assets\Scrpits\Inventory\ItemSetUp.cs" />
      <Compile Include="Assets\Scrpits\Inventory\SelectSlot.cs" />
      <Compile Include="Assets\Scrpits\Inventory\Slot.cs" />
-     <Compile Include="Assets\Scrpits\Inventory\up_Wheel_sprite.cs" />
+     <Compile Include="Assets\Scrpits\Note\NoteManger.cs" />
+     <Compile Include="Assets\Scrpits\Note\PageNote.cs" />
+     <Compile Include="Assets\Scrpits\Note\RewardNote_Check.cs" />
+     <Compile Include="Assets\Scrpits\Object\ActionController_GetNote.cs" />
+     <Compile Include="Assets\Scrpits\Object\Chestaction.cs" />
      <Compile Include="Assets\Scrpits\ObjectOutline\DrawOutline_HJ.cs" />
      <Compile Include="Assets\Scrpits\ObjectOutline\EasyOutlineSystem.cs" />
      <Compile Include="Assets\Scrpits\ObjectOutline\SortComparerForOutline_HJ.cs" />
@@ -181,32 +245,47 @@
      <Compile Include="Assets\Scrpits\Puzzle\Light\Light_test.cs" />
      <Compile Include="Assets\Scrpits\Puzzle\Light\OntriggerLamp.cs" />
      <Compile Include="Assets\Scrpits\Puzzle\Light\ResetButton.cs" />
+     <Compile Include="Assets\Scrpits\UI\TitleBtn_Indexer.cs" />
      <Compile Include="Assets\Scrpits\UI\TitleButton.cs" />
      <Compile Include="Assets\Scrpits\WendyAnimation\Animation\Camera_Babysee.cs" />
      <Compile Include="Assets\Scrpits\WendyAnimation\eyesight_baby.cs" />
      <Compile Include="Assets\Scrpits\WendyAnimation\Test_eyeside.cs" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFOOrthogonal.shader" />
-     <None Include="Assets\_INGINGING\Hee-ji\_grass_heeji\Grass Assets\Materials\Additive Summation.shader" />
+     <None Include="Assets\_INGINGING\Hee-ji\1\_grass_heeji\Grass Assets\Materials\Additive Summation.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFMUnlit.shader" />
+     <None Include="Assets\_PurchasedAsset\_Interior\_IvyPack\__CubemapsShaders\ASE_StandartMaskedDetails.shader" />
+     <None Include="Assets\_INGINGING\Hee-ji\final_tex\1stage\grass\Grass2.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Common\Shaders\DepthBlur.shader" />
+     <None Include="Assets\_INGINGING\Hee-ji\final_background\fix\gagu\Test_cutOut_Surf.shader" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\Pipeline\Pipeline.hlsl" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Deferred\Shaders\SnowOverlay.cginc" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\GlobalSnowForwardOptions.cginc" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Deferred\Shaders\SnowOverlay.shader" />
+     <None Include="Assets\_PurchasedAsset\SSAO Pro\Readme.txt" />
+     <None Include="Assets\_INGINGING\Hee-ji\final_tex\1stage\grass\Grass.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\FogOfWar.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFMStandardShader.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFRUnlit.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Deferred\Shaders\MaskWrite.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFOWithSky.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\Nature\SnowedGrass.cginc" />
-     <None Include="Assets\_PurchasedAsset\Retro Cabinet\ReadMe.txt" />
+     <None Include="Assets\_PurchasedAsset\X\Retro Cabinet\ReadMe.txt" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\License.txt" />
      <None Include="Assets\Scrpits\ObjectOutline\EasyOutline.shader" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\API\D3D9.hlsl" />
+     <None Include="Assets\_PurchasedAsset\_Interior\Nauthilus Games\01-Assets\04-Shader\PlantShader.shader" />
      <None Include="Assets\MotionBlur\Resources\Reconstruction.cginc" />
+     <None Include="Assets\Resources\SSAO Pro\SSAOPro_v2.shader" />
+     <None Include="Assets\_INGINGING\Hee-ji\final_background\fix\gagu\Custom Cutout_shadow_opaque.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFMSurfaceShaderCommon.cginc" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Deferred\Shaders\Tree\Tree_Opaque.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Common\Shaders\DepthCopyMask.shader" />
+     <None Include="Assets\_PurchasedAsset\_Interior\_IvyPack\__CubemapsShaders\ASE_Standart.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Common\Shaders\SnowParticleSurfaceShader.shader" />
      <None Include="Assets\Sprites\Texture\2Stage\mainclock\Custom Cutout.shader" />
-     <None Include="Assets\_PurchasedAsset\3DTOYS\readme.txt" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\API\OpenGL.hlsl" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\API\PSSL.hlsl" />
+     <None Include="Assets\_PurchasedAsset\X\3DTOYS\readme.txt" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\BasicCoverage.cginc" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Common\Shaders\SnowParticleSurfaceShaderOpaque.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DynamicFogCommon.cginc" />
@@ -215,22 +294,33 @@
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Extras\WaterReflections\README.txt" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Common\Shaders\Compose.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFMLambertSolidColor.shader" />
+     <None Include="Assets\_PurchasedAsset\_Interior\_IvyPack\__CubemapsShaders\ASE_StandartTransparentAdditive.shader" />
+     <None Include="Assets\_INGINGING\Hee-ji\lighting\2-3stage\frame\Custom Cutout_shadow.shader" />
      <None Include="Assets\Scrpits\Puzzle\Light\Custom Cutout.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Deferred\Shaders\Tree\TreeLibrary.cginc" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFGOnlyFog.shader" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\API\PSP2.hlsl" />
      <None Include="Assets\Materials\Custom\Custom Cutout.shader" />
+     <None Include="Assets\_PurchasedAsset\Falling_Dust\Falling Dust - Documentation.txt" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\GlobalSnowForReflections.shader" />
      <None Include="Assets\MotionBlur\Resources\Common.cginc" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\API\D3D12.hlsl" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Common\Shaders\DecalDraw.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFOBasic.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\SpeedTree\SnowedSpeedTreeBillboard.cginc" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\Colors.hlsl" />
+     <None Include="Assets\_PurchasedAsset\_Interior\Nauthilus Games\03-Documentation\PlantShader.txt" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFGSimple.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\GlobalSnow.cginc" />
-     <None Include="Assets\_INGINGING\Hee-ji\_grass_heeji\Additive Intensify.shader" />
-     <None Include="Assets\_INGINGING\Hee-ji\_grass_heeji\WindGrass2.shader" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\API\Switch.hlsl" />
+     <None Include="Assets\_INGINGING\Hee-ji\1\_grass_heeji\Additive Intensify.shader" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\SCPE.hlsl" />
+     <None Include="Assets\_INGINGING\Hee-ji\1\_grass_heeji\WindGrass2.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFGDesktopPlusOrthogonal.shader" />
+     <None Include="Assets\_PurchasedAsset\SSAO Pro\Changelog.txt" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFRLambert.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Common\MovingObjects\MovingObjectOverlay.shader" />
+     <None Include="Assets\Resources\SSAO Pro\SSAOPro.cginc" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFRUnlitSolidColor.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\GlobalSnowDistance.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\SpeedTree\SnowedSpeedTree.cginc" />
@@ -242,72 +332,96 @@
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFOOnlyFog.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Common\Shaders\SnowPremultiplyBlend.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\GlobalSnow.shader" />
+     <None Include="Assets\_PurchasedAsset\BadDog\VolumetricLighting\Shaders\BGVolumetricLighting.cginc" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFGOrthogonal.shader" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\API\Vulkan.hlsl" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Deferred\Shaders\Tree\GlobalSnowMats.cginc" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\SpeedTree\SnowedSpeedTreeCommon.cginc" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFGBasic.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\SpeedTree\SpeedTreeBillboardAdapted.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFODesktopPlusOrthogonal.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Deferred\Shaders\GlobalSnowDeferredOptions.cginc" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\API\XboxOne.hlsl" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\SpeedTree\SnowedSpeedTreeWind.cginc" />
      <None Include="Assets\Scrpits\ObjectOutline\RenderDepth.shader" />
+     <None Include="Assets\_PurchasedAsset\_Interior\_IvyPack\__CubemapsShaders\ASE_Standart2Sided.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\SpeedTree\SnowedSpeedTreeBillboardCommon.cginc" />
-     <None Include="Assets\_INGINGING\Hee-ji\_grass_heeji\WindGrass.shader" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\Sampling.hlsl" />
+     <None Include="Assets\_PurchasedAsset\Falling_Dust\ClickLeftMouseButtonToFireMortar.txt" />
+     <None Include="Assets\_INGINGING\Hee-ji\1\_grass_heeji\WindGrass.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Deferred\Shaders\Grass &amp; Billboards\README_ONLY_FOR_DEFERRED.txt" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\DepthNormals.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFODesktopPlus.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFGWithSky.shader" />
+     <None Include="Assets\_PurchasedAsset\_Interior\Nauthilus Games\03-Documentation\PostProcess.txt" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFMStandardShaderNormalOcclusion.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFMStandardShaderNormal.shader" />
+     <None Include="Assets\_PurchasedAsset\_Interior\Nauthilus Games\03-Documentation\Read me.txt" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\ACES.hlsl" />
      <None Include="Assets\MotionBlur\Resources\Prefilter.cginc" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\SpeedTree\SpeedTreeNoLeaves.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Common\MovingObjects\GlobalSnowMovingObject.cginc" />
+     <None Include="Assets\_INGINGING\Hee-ji\lighting\2-3stage\frame\TransparentShadowReceiver.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Common\Shaders\Compose.cginc" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\Blending.hlsl" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFGDesktop.shader" />
      <None Include="Assets\MotionBlur\Resources\FrameBlending.shader" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\xRLib.hlsl" />
+     <None Include="Assets\_PurchasedAsset\_Interior\_IvyPack\__CubemapsShaders\ASE_StandartTransparent.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Common\Shaders\DepthCopy.shader" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\StdLib.hlsl" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFMStandardShaderNormalOcclusionIntegrated.shader" />
+     <None Include="Assets\_PurchasedAsset\_Interior\Antique Optical Instruments\README.txt" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Common\MovingObjects\MovingObjectOpaque.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFMVertexFragmentShaderCommon.cginc" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFGDesktopPlus.shader" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\Pipeline\URP.hlsl" />
+     <None Include="Assets\_PurchasedAsset\_Interior\Playground_collection\readme.txt" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\EraseGeometry.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFOSimple.shader" />
-     <None Include="Assets\_PurchasedAsset\Grimoire\ReadMe.txt" />
+     <None Include="Assets\_PurchasedAsset\X\Grimoire\ReadMe.txt" />
+     <None Include="Assets\_PurchasedAsset\BadDog\VolumetricLighting\Shaders\BGVolumetricLighting.shader" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\Pipeline\Standard.hlsl" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\API\D3D11.hlsl" />
      <None Include="Assets\Sprites\Texture\2Stage\mainclock\Custom Cutout_ver3.shader" />
      <None Include="Assets\MotionBlur\Resources\Reconstruction.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DynamicFogDither.cginc" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\Blurring.hlsl" />
+     <None Include="Assets\_INGINGING\Hee-ji\final_background\fix\gagu\Custom Cutout_shadow_opaque_oneside.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFMStandardShaderSolid.shader" />
      <None Include="Assets\_PurchasedAsset\Snow\Resources\Workflow_Forward\Shaders\EraseShader.shader" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFRStandardShader.shader" />
+     <None Include="Assets\_PurchasedAsset\SC Post Effects\Shaders\API\Metal.hlsl" />
      <None Include="Assets\_PurchasedAsset\Fog\Resources\Shaders\DFMLambert.shader" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Recorder.Editor">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Recorder">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Runtime">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>E:/Programs/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -493,13 +607,13 @@
  <HintPath>E:/Programs/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/Wendy/_Wendy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>E:/UnityProject/__WENDY_FINALPROJECT/_Wendy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>E:/Programs/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -852,9 +966,17 @@
       <Project>{D74E4E6A-A00D-E419-9AFE-ABEF97A128F5}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
+    <ProjectReference Include="sc.posteffects.editor.csproj">
+      <Project>{3A05155C-8538-76C5-1D5C-6C238A6ED317}</Project>
+      <Name>sc.posteffects.editor</Name>
+    </ProjectReference>
     <ProjectReference Include="PathCreator.csproj">
       <Project>{2F913B9D-A330-488B-7E28-BA55AC9C1FF2}</Project>
       <Name>PathCreator</Name>
+    </ProjectReference>
+    <ProjectReference Include="sc.posteffects.runtime.csproj">
+      <Project>{8B036805-3468-3739-F28E-533A243B3031}</Project>
+      <Name>sc.posteffects.runtime</Name>
     </ProjectReference>
     <ProjectReference Include="PathCreatorEditor.csproj">
       <Project>{8631BDAF-5176-81CA-8783-B94C0762BFF4}</Project>

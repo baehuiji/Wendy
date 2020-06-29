@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Move_Cuckoo : MonoBehaviour
 {
+    [SerializeField]
+    private string CrowSound = "CP_crow";
+
     // - 이동
     private bool movestate = false;
     public Transform startTransform;
@@ -64,6 +67,9 @@ public class Move_Cuckoo : MonoBehaviour
 
     bool once = false;
 
+    private float journeyLength;
+
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -93,12 +99,14 @@ public class Move_Cuckoo : MonoBehaviour
         cpManager_script = GameObject.FindObjectOfType<ClockPuzzle_Manager>();
 
         //AniNameHash = animator.StringToHash(EventEndAnimationName);
+
+        journeyLength = Vector3.Distance(startTransform.position, endTransform.position);
     }
 
-    void Update()
-    {
+    //void Update()
+    //{
 
-    }
+    //}
 
     public void start_cuckooAni()
     {
@@ -133,7 +141,7 @@ public class Move_Cuckoo : MonoBehaviour
             magicVec = new Vector3(0, 1, 0);
         }
 
-        Debug.Log(angle.ToString());
+        //Debug.Log(angle.ToString());
 
         StartCoroutine(cuckoo_come_camera_front(true));
     }
@@ -164,9 +172,12 @@ public class Move_Cuckoo : MonoBehaviour
                 center -= magicVec; // new Vector3(0, 1, 0); //매직벡터사용
                 Vector3 startRelCenter = transform.position - center;
                 Vector3 setRelCenter = endTransform.position - center;
-                //float fracComplete = (Time.time - startTime) / journeyTime;
-                float fracComplete = moveSpeed * Time.deltaTime;
-                transform.position = Vector3.Slerp(startRelCenter, setRelCenter, fracComplete);
+
+                //Slerp을 지정시간 이동조절 쓰는법
+                float distCovered = (Time.time - startTime) * moveSpeed;
+                float fracJourney = distCovered / journeyLength;
+
+                transform.position = Vector3.Slerp(startRelCenter, setRelCenter, fracJourney);
                 transform.position += center;
 
                 // - 회전
@@ -195,9 +206,11 @@ public class Move_Cuckoo : MonoBehaviour
                 center -= magicVec; // new Vector3(0, 1, 0);
                 Vector3 startRelCenter = transform.position - center;
                 Vector3 setRelCenter = startTransform.position - center;
-                //float fracComplete = (Time.time - startTime) / journeyTime;
-                float fracComplete = moveSpeed * Time.deltaTime;
-                transform.position = Vector3.Slerp(startRelCenter, setRelCenter, fracComplete);
+
+                float distCovered = (Time.time - startTime) * moveSpeed;
+                float fracJourney = distCovered / journeyLength;
+
+                transform.position = Vector3.Slerp(startRelCenter, setRelCenter, fracJourney); //2
                 transform.position += center;
 
                 // - 회전
@@ -217,10 +230,22 @@ public class Move_Cuckoo : MonoBehaviour
             }
 
             //active = false; //# -> doorAni_script 스크립트로 옮김
+            cpManager_script.set_popup_anmu(false);
         }
 
         moveAniState = false;
     }
+
+    IEnumerator crowSoundStart()
+    {
+        // - 앵무새 애니메이션 시작
+        yield return new WaitForSeconds(2.6f);
+
+        SoundManger.instance.PlaySound(CrowSound); // 이건 약간 3초 뒤에 하거나 해야하는 걸로 안다. 
+
+
+    }
+
 
     IEnumerator check_aniState()
     {
@@ -231,6 +256,7 @@ public class Move_Cuckoo : MonoBehaviour
         // - 카메라 흔들기 (최초1회 실행)
         if (!once)
         {
+            StartCoroutine(crowSoundStart());
 
             animator.Play(AniName_start, 0, 0f);
 

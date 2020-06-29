@@ -16,6 +16,5 @@ MonoBehaviour:
   itemName: Wendy
   itemType: 4
   itemImage: {fileID: 21300000, guid: 8a782f6b88bea194cbc36b3d46ccc9d1, type: 3}
-  itemPrefab: {fileID: 4631199223695419998, guid: 096ae076079c9ea43b3f19a9ebe548d1,
-    type: 3}
+  itemPrefab: {fileID: 0}
   weaponType: 

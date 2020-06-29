@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class backGear_Move : MonoBehaviour
 {
+    [SerializeField]
+    private string gearBackSound = "PP_gear2";
+
     private bool gearOn = false;
     private bool inRotation = false;
     public int backgearNumber; //인덱스
@@ -58,6 +61,8 @@ public class backGear_Move : MonoBehaviour
 
         if (gearOn)
         {
+            SoundManger.instance.PlaySound(gearBackSound);
+
             //RotTarget.rotation = Quaternion.Euler(new Vector3(180f, 0, 0));
 
             if (once)
@@ -65,6 +70,7 @@ public class backGear_Move : MonoBehaviour
                 if (cir_dir > 0f)
                 {
                     RotTarget.Rotate(Vector3.left * 90f);
+
                     //RotTarget.rotation = Quaternion.Euler(new Vector3(180f, 0, 0));
                 }
                 else if (cir_dir < 0f)
@@ -87,6 +93,8 @@ public class backGear_Move : MonoBehaviour
         }
         else
         {
+            SoundManger.instance.PlaySound(gearBackSound);
+
             //RotTarget.rotation = Quaternion.Euler(new Vector3(0f, 0, 0));
 
             if (cir_dir > 0f)

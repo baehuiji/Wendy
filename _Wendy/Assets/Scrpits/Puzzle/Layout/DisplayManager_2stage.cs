@@ -50,11 +50,71 @@ public class DisplayManager_2stage : MonoBehaviour
 
     public void destroy_colliders()
     {
+        // - 복제
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                if (input_Arry[i] == doll_obj[j].GetComponent<ItemPickUp>().get_itemCode())
+                {
+                    displayLocation_script[i].setup_Doll(doll_obj[j], 1);
+                    break;
+                }
+            }
+        }
+
         for (int i = 0; i < displayLocation_script.Length; i++)
         {
-            displayLocation_script[i].complete_layout();
+            displayLocation_script[i].enabled = false;
+        }
+
+    }
+
+    public void Create_sameOne()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            // - 비교, 원하는 위치에 원하는 인형인지 검사 -> @
+            for (int j = 0; j < 8; j++)
+            {
+                if (input_Arry[i] == doll_obj[j].GetComponent<ItemPickUp>().get_itemCode())
+                {
+                    displayLocation_script[i].setup_Doll(doll_obj[j], 1);
+                    break;
+                }
+            }
+
+            //콜라이더 삭제
+            //input_DollArry[index].GetComponent<BoxCollider>()
         }
     }
 
+    // +
+    public void MoveSelectedInputArry(int index, Vector3 newPos, Quaternion newRot)
+    {
+        doll_obj[index].transform.position = newPos;
+        doll_obj[index].transform.rotation = newRot;
+        doll_obj[index].SetActive(true);
+    }
+
+    // +
+    public int compareItemCode(int find)
+    {
+        ItemPickUp tempItemInfo = null;
+        for (int i = 0; i < doll_obj.Length; i++)
+        {
+            tempItemInfo = doll_obj[i].transform.GetComponent<ItemPickUp>();
+
+            if (tempItemInfo != null)
+            {
+                if (find == tempItemInfo.get_itemCode())
+                {
+                    return i;
+                }
+            }
+        }
+
+        return -1;
+    }
 
 }

@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Gear_Move : MonoBehaviour
 {
+    [SerializeField]
+    private string GearmoveSound = "FP_gear1";
+
+    [SerializeField]
+    private string PictureFrameSound = "FP_ImageGear";
+
     private bool gearOn = false;
     private bool inRotation = false;
     public int gearNumber; //인덱스
@@ -111,10 +117,34 @@ public class Gear_Move : MonoBehaviour
         {
             //이미지 내리기 *************
             drawingMove_script.Play(true, firstTime); //안됨?
+            SoundManger.instance.PlaySound(PictureFrameSound);
+
+            //기어 사운드
+            SoundManger.instance.PlaySound(GearmoveSound);
         }
         else if (matchType == 2) //사운드
         {
+            //기어 사운드
+            SoundManger.instance.PlaySound(GearmoveSound);
+
             //sound On
+            //switch (matchNumber)
+            //{
+            //    case 1:
+
+            //        break;
+            //    case 2:
+            //        SoundManger.instance.PlaySound("2nd-gear");
+            //        break;
+            //    case 3:
+            //        SoundManger.instance.PlaySound("3rd-gear");
+            //        break;
+            //    case 4:
+
+            //        break;
+            //    default:
+            //        break;
+            //}
         }
     }
     public void gear_unActive() //연결오브제 비활성화
@@ -127,10 +157,38 @@ public class Gear_Move : MonoBehaviour
         {
             //이미지 올리기
             drawingMove_script.Play(false, firstTime);
+
+            //기어사운드
+
+            //기어 사운드
+            SoundManger.instance.PlaySound(GearmoveSound);
+
+            SoundManger.instance.PlaySound(PictureFrameSound);
+
         }
         else if (matchType == 2) //사운드
         {
+            //기어사운드
+            SoundManger.instance.StopEffectSound(GearmoveSound);
+
             //sound Off
+            //switch (matchNumber)
+            //{
+            //    case 1:
+
+            //        break;
+            //    case 2:
+            //        SoundManger.instance.StopEffectSound("2nd-gear");
+            //        break;
+            //    case 3:
+            //        SoundManger.instance.StopEffectSound("3rd-gear");
+            //        break;
+            //    case 4:
+
+            //        break;
+            //    default:
+            //        break;
+            //}
         }
     }
 

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8067128712278067900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8067128712278067898}
+  - component: {fileID: 8067128712278067899}
+  - component: {fileID: 8067128712278067897}
+  m_Layer: 0
+  m_Name: Game_Note_Mgr
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8067128712278067898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8067128712278067900}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8067128712278067899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8067128712278067900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4974d4accd2a7f249b21bb7f7a719f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: []
+  Inventory_Panel: {fileID: 0}
+  scrollRectView: {fileID: 0}
+  inventoryCG: {fileID: 0}
+  BGMSound: 
+  selectSlot_script: {fileID: 0}
+  puzzleImage: {fileID: 0}
+  optionPanel: {fileID: 0}
+--- !u!114 &8067128712278067897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8067128712278067900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99e4fef3ada06c4fa12d79d580020d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoteImage: {fileID: 0}
+  Note_1: {fileID: 21300000, guid: a64b9f142e353654d97e17f78d7faa9a, type: 3}
+  Note_2: {fileID: 21300000, guid: c495d24b452b336418be4711ff6cfaa0, type: 3}
+  Note_3: {fileID: 21300000, guid: 0765ef3d5fee87544acdd5074b1b9243, type: 3}
+  Note_4: {fileID: 21300000, guid: 8d619edf34e3f8f4d876ec2717fc8e12, type: 3}
+  Note_5: {fileID: 21300000, guid: f9743e5996f8003439df2252b1ad31b1, type: 3}
+  ConditionPanel: {fileID: 0}
+  Aim: {fileID: 0}
+  _popup: 0

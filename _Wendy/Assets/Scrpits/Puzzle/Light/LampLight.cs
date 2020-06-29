@@ -23,43 +23,7 @@ public class LampLight : MonoBehaviour
 
     public void SetLight(int LampNum)
     {
-   //print("마우스 입력 받았음");
-                //   if (state == true)
-                // {
-
-        /*
-                if (_Pointstate[0].activeInHierarchy == true)
-                {
-                    _Pointstate[0].gameObject.SetActive(false);
-
-                }
-                else
-                {
-                    _Pointstate[0].gameObject.SetActive(true);
-                }
-
-
-                if (_Pointstate[1].activeInHierarchy == true)
-                {
-                    _Pointstate[1].gameObject.SetActive(false);
-                }
-                else
-                {
-                    _Pointstate[1].gameObject.SetActive(true);
-                }
-
-
-                if (_Pointstate[2].activeInHierarchy == true)
-                {
-                    _Pointstate[2].gameObject.SetActive(false);
-                }
-                else
-                {
-                    _Pointstate[2].gameObject.SetActive(true);
-                }
-                */
-
-        //Debug.Log(LampNum);
+ 
         
     }
 }
