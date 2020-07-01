@@ -81,7 +81,7 @@ ModelImporter:
         intParameter: 1
         messageOptions: 0
       - time: 0.8513645
-        functionName: NewEvent
+        functionName: WendyFootSound
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 3.14

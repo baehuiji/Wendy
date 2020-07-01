@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameOverManger : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class GameOverManger : MonoBehaviour
     Vector2 RPanelPos;
 
     Animator _animator = null;
-
+    bool SetClick = false;
     // Start is called before the first frame update
 
 
@@ -40,6 +41,19 @@ public class GameOverManger : MonoBehaviour
         _animator = PlayerObj.GetComponent<Animator>();
 
     }
+    void Update()
+    {
+        if (SetClick)
+        {
+            if (Input.GetMouseButton(0))
+            {
+                SceneManager.LoadScene("00_Title");
+            }
+        }
+        else
+            return;
+    }
+
 
     public void GameOver(int a)
     {
@@ -99,6 +113,8 @@ public class GameOverManger : MonoBehaviour
 
             yield return waitTime;
         }
+
+        SetClick = true;
     }
 
 

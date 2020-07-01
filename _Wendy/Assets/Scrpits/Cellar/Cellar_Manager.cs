@@ -48,45 +48,62 @@ public class Cellar_Manager : MonoBehaviour
 
     IEnumerator deley()
     {
-        yield return new WaitForSeconds(50);
+
+
+        yield return new WaitForSeconds(5);
 
 
         Vector3 EWallstartPos = Wall_E.transform.localPosition;
         Vector3 SWallstartPos = Wall_S.transform.position;
 
+
         SoundManger.instance.PlaySound(RockDown);
         SoundManger.instance.PlaySound(MoveWallSound);
-        StartCoroutine(EWall_CountDown(EWallstartPos + new Vector3(moveStreet, 0, 0), 3f));   // 시작부터 카운트 다운이 진행된다. 
-        StartCoroutine(SWall_CountDown(SWallstartPos + new Vector3(0, 0, moveStreet), 3f));   // 시작부터 카운트 다운이 진행된다. 
-
-        yield return new WaitForSeconds(50);
-
-        SoundManger.instance.PlaySound(BreakonSound);
-        SoundManger.instance.PlaySound(MoveWallSound);
-        StartCoroutine(EWall_CountDown(EWallstartPos + new Vector3(moveStreet + (addStreet), 0, 0), 3f));   // 시작부터 카운트 다운이 진행된다. 
-        StartCoroutine(SWall_CountDown(SWallstartPos + new Vector3(0, 0, moveStreet+(addStreet)), 3f));   // 시작부터 카운트 다운이 진행된다. 
+        StartCoroutine(EWall_CountDown(EWallstartPos + new Vector3(10, 0, 0), 400f));   // 시작부터 카운트 다운이 진행된다. 
+        StartCoroutine(SWall_CountDown(SWallstartPos + new Vector3(0, 0, 10), 400f));   // 시작부터 카운트 다운이 진행된다. 
 
 
-        yield return new WaitForSeconds(50);
-        SoundManger.instance.PlaySound(MoveWallSound);
-        SoundManger.instance.PlaySound(BreakonSound);
-        StartCoroutine(EWall_CountDown(EWallstartPos + new Vector3((moveStreet + (addStreet * 2)), 0, 0), 3f));   // 시작부터 카운트 다운이 진행된다. 
-
-        StartCoroutine(SWall_CountDown(SWallstartPos + new Vector3(0, 0, moveStreet + (addStreet *2)), 3f));   // 시작부터 카운트 다운이 진행된다. 
 
 
-        yield return new WaitForSeconds(50);
-        SoundManger.instance.PlaySound(MoveWallSound);
-        SoundManger.instance.PlaySound(BreakonSound);
-        StartCoroutine(EWall_CountDown(EWallstartPos + new Vector3((moveStreet + (addStreet * 3)), 0, 0), 3f));   // 시작부터 카운트 다운이 진행된다. 
-        StartCoroutine(SWall_CountDown(SWallstartPos + new Vector3(0, 0, moveStreet + (addStreet*3)), 3f));   // 시작부터 카운트 다운이 진행된다. 
+        //yield return new WaitForSeconds(50);
 
 
-        yield return new WaitForSeconds(50);
-        SoundManger.instance.PlaySound(MoveWallSound);
-        SoundManger.instance.PlaySound(BreakonSound);
-        StartCoroutine(EWall_CountDown(EWallstartPos + new Vector3((moveStreet + (addStreet * 5)), 0, 0), 3f));   // 시작부터 카운트 다운이 진행된다. 
-        StartCoroutine(SWall_CountDown(SWallstartPos + new Vector3(0, 0, moveStreet + (addStreet * 5)), 3f));   // 시작부터 카운트 다운이 진행된다. 
+        //Vector3 EWallstartPos = Wall_E.transform.localPosition;
+        //Vector3 SWallstartPos = Wall_S.transform.position;
+
+        //SoundManger.instance.PlaySound(RockDown);
+        //SoundManger.instance.PlaySound(MoveWallSound);
+        //StartCoroutine(EWall_CountDown(EWallstartPos + new Vector3(moveStreet, 0, 0), 3f));   // 시작부터 카운트 다운이 진행된다. 
+        //StartCoroutine(SWall_CountDown(SWallstartPos + new Vector3(0, 0, moveStreet), 3f));   // 시작부터 카운트 다운이 진행된다. 
+
+        //yield return new WaitForSeconds(50);
+
+        //SoundManger.instance.PlaySound(BreakonSound);
+        //SoundManger.instance.PlaySound(MoveWallSound);
+        //StartCoroutine(EWall_CountDown(EWallstartPos + new Vector3(moveStreet + (addStreet), 0, 0), 3f));   // 시작부터 카운트 다운이 진행된다. 
+        //StartCoroutine(SWall_CountDown(SWallstartPos + new Vector3(0, 0, moveStreet+(addStreet)), 3f));   // 시작부터 카운트 다운이 진행된다. 
+
+
+        //yield return new WaitForSeconds(50);
+        //SoundManger.instance.PlaySound(MoveWallSound);
+        //SoundManger.instance.PlaySound(BreakonSound);
+        //StartCoroutine(EWall_CountDown(EWallstartPos + new Vector3((moveStreet + (addStreet * 2)), 0, 0), 3f));   // 시작부터 카운트 다운이 진행된다. 
+
+        //StartCoroutine(SWall_CountDown(SWallstartPos + new Vector3(0, 0, moveStreet + (addStreet *2)), 3f));   // 시작부터 카운트 다운이 진행된다. 
+
+
+        //yield return new WaitForSeconds(50);
+        //SoundManger.instance.PlaySound(MoveWallSound);
+        //SoundManger.instance.PlaySound(BreakonSound);
+        //StartCoroutine(EWall_CountDown(EWallstartPos + new Vector3((moveStreet + (addStreet * 3)), 0, 0), 3f));   // 시작부터 카운트 다운이 진행된다. 
+        //StartCoroutine(SWall_CountDown(SWallstartPos + new Vector3(0, 0, moveStreet + (addStreet*3)), 3f));   // 시작부터 카운트 다운이 진행된다. 
+
+
+        //yield return new WaitForSeconds(50);
+        //SoundManger.instance.PlaySound(MoveWallSound);
+        //SoundManger.instance.PlaySound(BreakonSound);
+        //StartCoroutine(EWall_CountDown(EWallstartPos + new Vector3((moveStreet + (addStreet * 5)), 0, 0), 3f));   // 시작부터 카운트 다운이 진행된다. 
+        //StartCoroutine(SWall_CountDown(SWallstartPos + new Vector3(0, 0, moveStreet + (addStreet * 5)), 3f));   // 시작부터 카운트 다운이 진행된다. 
 
 
 

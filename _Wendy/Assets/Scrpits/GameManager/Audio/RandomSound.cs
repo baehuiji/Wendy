@@ -24,7 +24,7 @@ public class RandomSound : MonoBehaviour
 
             yield return new WaitForSeconds(w);
 
-            int i = Random.Range(0, 7);
+            int i = Random.Range(0, 8);
             SoundManger.instance.PlaySound(RondomSound[i]);
         }
 
